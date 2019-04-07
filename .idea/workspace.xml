@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ba1f373-2a81-4320-8ebe-e292e2d346e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/messageBoard/db/H2Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/messageBoard/db/H2Topic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/messageBoard/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/messageBoard/model/Topic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/servlet/MessageServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/servlet/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/servlet/TopicServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/morema/util/mustache/MustacheRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/message.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/topic.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/messageBoard/db/H2Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/messageBoard/db/H2Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/messageBoard/db/H2Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/messageBoard/db/H2Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/messageBoard/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/messageBoard/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/messageBoard/model/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/messageBoard/model/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/servlet/MessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/servlet/MessageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/servlet/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/servlet/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/group2/servlet/TopicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/group2/servlet/TopicServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,9 +25,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/morema/util/mustache/MustacheRender.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/group2/util/mustache/MustacheRender.java">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/com/group2/servlet/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-300">
+              <caret line="4" selection-start-line="4" selection-end-line="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/group2/servlet/MessageServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-24">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -44,10 +68,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/morema/util/mustache/MustacheRender.java" />
+        <option value="$PROJECT_DIR$/src/main/com/group2/util/mustache/MustacheRender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/morema/servlet/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/com/group2/servlet/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/com/group2/servlet/MessageServlet.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1366" />
     <option name="y" value="-4" />
     <option name="width" value="1366" />
     <option name="height" value="772" />
@@ -81,15 +110,7 @@
               <item name="milestoneplanner" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="morema" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="milestoneplanner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="milestoneplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="morema" type="462c0819:PsiDirectoryNode" />
-              <item name="mustache" type="462c0819:PsiDirectoryNode" />
+              <item name="group2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -109,8 +130,16 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../Web Platform Development 2/servletDemo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -124,7 +153,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Runner">
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.com.group2.servlet.Runner" />
+      <module name="milestoneplanner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.com.group2.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.14" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.14" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="milestoneplanner:war exploded">
@@ -146,6 +188,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Runner" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -157,15 +204,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554659072267</updated>
-      <workItem from="1554659082369" duration="1661000" />
+      <workItem from="1554659082369" duration="2284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1661000" />
+    <option name="totallyTimeSpent" value="2284000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -206,16 +254,113 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/milestoneplanner$Runner.ic" NAME="Runner Coverage Results" MODIFIED="1554662443379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.com.group2.servlet.*</FILTER>
+    </SUITE>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/morema/util/mustache/MustacheRender.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/group2/util/mustache/MustacheRender.java">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/group2/servlet/MessageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/group2/servlet/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="4" selection-start-line="4" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>milestoneplanner</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

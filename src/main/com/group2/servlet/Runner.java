@@ -1,7 +1,8 @@
 
-package main.java.com.morema.servlet;
+package main.com.group2.servlet;
 
-import com.morema.messageBoard.db.H2Message;
+
+import main.com.group2.messageBoard.db.H2Message;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;

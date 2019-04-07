@@ -1,10 +1,10 @@
-package main.java.com.morema.servlet;
+package main.com.group2.servlet;
 
 
 import lombok.Data;
-import com.morema.messageBoard.db.H2Message;
-import com.morema.messageBoard.model.Message;
-import com.morema.util.mustache.MustacheRender;
+import main.com.group2.messageBoard.db.H2Message;
+import main.com.group2.messageBoard.model.Message;
+import main.com.group2.util.mustache.MustacheRender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

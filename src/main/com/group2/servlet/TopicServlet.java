@@ -1,1 +1,1 @@
-package main.java.com.morema.servlet;
+package main.com.group2.servlet;

@@ -1,4 +1,4 @@
-package main.java.com.morema.messageBoard.model;
+package main.com.group2.messageBoard.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
