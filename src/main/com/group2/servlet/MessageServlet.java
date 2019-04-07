@@ -1,4 +1,4 @@
-package main.com.group2.servlet;
+package main.java.com.morema.servlet;
 
 
 import lombok.Data;

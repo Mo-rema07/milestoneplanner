@@ -1,4 +1,4 @@
-package main.com.group2.messageBoard.model;
+package main.java.com.morema.messageBoard.model;
 
 
 public class Message {

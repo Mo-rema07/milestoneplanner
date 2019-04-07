@@ -1,4 +1,4 @@
-package main.com.group2.messageBoard.db;
+package main.java.com.morema.messageBoard.db;
 
 import com.morema.messageBoard.model.Message;
 import org.slf4j.Logger;

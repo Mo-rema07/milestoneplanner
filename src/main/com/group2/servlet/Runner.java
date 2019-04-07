@@ -1,5 +1,5 @@
 
-package main.com.group2.servlet;
+package main.java.com.morema.servlet;
 
 import com.morema.messageBoard.db.H2Message;
 import org.eclipse.jetty.server.Server;
