@@ -13,4 +13,9 @@ public class Welcome extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("Welcome user");
 	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
 }
