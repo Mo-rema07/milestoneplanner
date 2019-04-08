@@ -2,7 +2,7 @@
 package main.com.group2.servlet;
 
 
-import main.com.group2.messageBoard.db.H2Message;
+import main.com.group2.milestonePlanner.db.H2Message;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;

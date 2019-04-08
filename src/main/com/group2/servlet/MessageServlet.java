@@ -2,8 +2,8 @@ package main.com.group2.servlet;
 
 
 import lombok.Data;
-import main.com.group2.messageBoard.db.H2Message;
-import main.com.group2.messageBoard.model.Message;
+import main.com.group2.milestonePlanner.db.H2Message;
+import main.com.group2.milestonePlanner.model.Message;
 import main.com.group2.util.mustache.MustacheRender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

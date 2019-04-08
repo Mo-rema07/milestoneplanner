@@ -1,4 +1,4 @@
-package main.com.group2.messageBoard.model;
+package main.com.group2.milestonePlanner.model;
 
 
 public class Message {

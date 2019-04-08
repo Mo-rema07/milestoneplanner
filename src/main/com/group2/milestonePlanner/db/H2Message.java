@@ -1,6 +1,6 @@
-package main.com.group2.messageBoard.db;
+package main.com.group2.milestonePlanner.db;
 
-import main.com.group2.messageBoard.model.Message;
+import main.com.group2.milestonePlanner.model.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
