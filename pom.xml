@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <version>1.0</version>
 
-    <groupId>com.group_b</groupId>
+    <groupId>com.group_2</groupId>
     <artifactId>milestoneplanner</artifactId>
 
     <properties>
@@ -64,7 +64,7 @@
                 </executions>
                 <configuration>
                     <killAfter>-1</killAfter>
-                    <mainClass>com.group_b.servlet.Runner</mainClass>
+                    <mainClass>com.group_2.servlet.Runner</mainClass>
                 </configuration>
             </plugin>
 
