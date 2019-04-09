@@ -1,10 +1,11 @@
 package com.group_2.servlet;
 
+import com.group_2.util.Validate;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import main.java.com.group_2.util.Validate;
 
 public class LoginServlet  extends HttpServlet {
 
