@@ -1,4 +1,4 @@
-package com.group_2.milestonePlanner.db;
+package com.group_2.milestonePlanner.dao;
 
 import com.group_2.milestonePlanner.model.Topic;
 import org.slf4j.Logger;

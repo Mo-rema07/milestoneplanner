@@ -1,7 +1,7 @@
 package com.group_2.servlet;
 
 
-import com.group_2.milestonePlanner.db.H2Message;
+import com.group_2.milestonePlanner.dao.H2Message;
 import com.group_2.milestonePlanner.model.Message;
 import com.group_2.util.mustache.MustacheRender;
 import lombok.Data;

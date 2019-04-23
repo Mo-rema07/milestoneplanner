@@ -2,7 +2,7 @@
 package com.group_2.servlet;
 
 
-import com.group_2.milestonePlanner.db.H2Message;
+import com.group_2.milestonePlanner.dao.H2Message;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
