@@ -15,14 +15,13 @@ public class LoginServlet  extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		String email = request.getParameter("email");
-		String pass = request.getParameter("pass");
+		String name = request.getParameter("user");
+		String pass = request.getParameter("password");
 
 		UserLogin userLogin = new UserLogin();
-		if(userLogin.login(pass,email))
+		if(userLogin.login(name,pass))
 		{
-			RequestDispatcher rs = request.getRequestDispatcher("/");
-			rs.forward(request, response);
+			response.sendRedirect("/projects");
 		}
 		else
 		{

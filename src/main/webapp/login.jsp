@@ -21,7 +21,7 @@
 <!-- Login section -->
 <div class="login">
     <button onclick="loginFunction()">Login</button>
-    <form action="/projects" method="post" id="Login">
+    <form action="" method="post" id="Login">
         Username:<br>
         <label for="user" class="textLabel"></label>
         <input type="text" name="user" id="user" required/>
