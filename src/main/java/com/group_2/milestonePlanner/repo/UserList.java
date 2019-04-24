@@ -11,9 +11,9 @@ public class UserList {
 		this.list = new ArrayList<>();
 	}
 
-	public void put(String userName, String hash){
-		User detail = new User(userName, hash);
-		list.add(detail);
+	public void put(String userName, String hash, String email){
+		User user = new User(userName, hash, email);
+		list.add(user);
 	}
 
 	public void put(User user){

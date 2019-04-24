@@ -14,18 +14,43 @@ import java.io.IOException;
 
 @WebServlet( name = "projects" ,urlPatterns = "/projects")
 public class ProjectServlet extends HttpServlet {
+	ProjectList projectList = new ProjectList();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		super.doPost(req, resp);
+		String name = req.getParameter("ptitle");
+		Project project = new Project(name);
+		projectList.put(project);
+		req.setAttribute("ProjectList",projectList.getList());
+		RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
+		rs.include(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		RequestDispatcher rs = req.getRequestDispatcher("/index.jsp");
+
+		Project project = new Project("Project 1");
+		Project project1 = new Project("Project 2");
+		Project project2 = new Project("Project 3");
+
+		projectList.put(project);
+		projectList.put(project1);
+		projectList.put(project2);
+
+		req.setAttribute("ProjectList",projectList.getList());
+		req.setAttribute("Title", "Landing Page");
+		req.setAttribute("test", "test");
+		req.setAttribute("project", project);
+
+		RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 		rs.include(req, resp);
+
+		for (Project p: projectList.getList()){
+
+		}
 	}
 }
+

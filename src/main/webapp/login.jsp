@@ -38,12 +38,11 @@
 <!-- signup section -->
 <div class="signup">
     <button onclick="signupFunction()">Sign Up</button>
-    <form action="/projects" method="post" id="SignUp">
+    <form action="" method="post" id="SignUp">
         Username:<br>
         <label for="user" class="textLabel"></label>
         <input type="text" name="user" id=User" required/>
         <br>
-
 
         Email adress:<br>
         <label for="email" class="textLabel"></label>

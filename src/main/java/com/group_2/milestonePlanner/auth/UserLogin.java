@@ -9,28 +9,22 @@ import org.slf4j.LoggerFactory;
 
 public class UserLogin  implements IUserLogin{
 	static final Logger LOG = LoggerFactory.getLogger(UserLogin.class);
-	UserList userList;
+	static UserList userList = UserDAO.getUsers();
 
-	public UserLogin() {
-		this.userList = UserDAO.getUsers();
-		System.out.println(userList.get("morema"));
-	}
 
-	@Override
-	public synchronized boolean login(@NonNull String userName, @NonNull String password) {
+	public static synchronized boolean login(@NonNull String userName, @NonNull String password) {
 		String storedHash = userList.get(userName);
 		return storedHash != null && PasswordHash.validatePassword(password, userList.get(userName));
 	}
 
-	@Override
-	public synchronized boolean register(@NonNull String userName, @NonNull String password) {
+	public static synchronized boolean register(@NonNull String userName, @NonNull String password, String email) {
 		String current = userList.get(userName);
 		if (current != null) {
 			return false;
 		}
 		try {
 			String hash = PasswordHash.createHash(password);
-			userList.put(userName, hash);
+			userList.put(userName, hash, email);
 			return true;
 		}
 		catch(Exception e){

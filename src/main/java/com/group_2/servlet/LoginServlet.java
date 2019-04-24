@@ -17,18 +17,26 @@ public class LoginServlet  extends HttpServlet {
 
 		String name = request.getParameter("user");
 		String pass = request.getParameter("password");
+		String email = request.getParameter("email");
 
-		UserLogin userLogin = new UserLogin();
-		if(userLogin.login(name,pass))
-		{
+		if (email == null) {
+			System.out.println(email);
+			UserLogin.register(name,pass,email);
 			response.sendRedirect("/projects");
+		} else {
+			if(UserLogin.login(name,pass))
+			{
+				response.sendRedirect("/projects");
+			}
+			else
+			{
+				out.println("Username or Password incorrect");
+				RequestDispatcher rs = request.getRequestDispatcher("/login.jsp");
+				rs.include(request, response);
+			}
 		}
-		else
-		{
-			out.println("Username or Password incorrect");
-			RequestDispatcher rs = request.getRequestDispatcher("/login.jsp");
-			rs.include(request, response);
-		}
+
+
 	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
