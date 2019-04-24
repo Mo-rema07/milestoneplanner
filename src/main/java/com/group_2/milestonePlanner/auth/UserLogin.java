@@ -1,12 +1,20 @@
 package com.group_2.milestonePlanner.auth;
 
+import com.group_2.milestonePlanner.dao.UserDAO;
 import com.group_2.milestonePlanner.repo.UserList;
 import lombok.NonNull;
 
-import static org.eclipse.jetty.http.MultiPartParser.LOG;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UserLogin  implements IUserLogin{
-	UserList userList = new UserList();
+	static final Logger LOG = LoggerFactory.getLogger(UserLogin.class);
+	UserList userList;
+
+	public UserLogin() {
+		this.userList = UserDAO.getUsers();
+	}
+
 	@Override
 	public synchronized boolean login(@NonNull String userName, @NonNull String password) {
 		String storedHash = userList.get(userName);
@@ -25,7 +33,7 @@ public class UserLogin  implements IUserLogin{
 			return true;
 		}
 		catch(Exception e){
-			LOG.info("Can't hash password <" +password+">:" +e.getMessage());
+			LOG.error("Can't hash password <" +password+">:" +e.getMessage());
 			return false;
 		}
 	}

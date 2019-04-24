@@ -2,8 +2,8 @@
 package com.group_2.servlet;
 
 
-import com.group_2.milestonePlanner.dao.H2Message;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
@@ -16,10 +16,8 @@ public class Runner {
 
     private static final int PORT = 9000;
 
-    private final H2Message h2Message;
 
     public Runner() {
-        h2Message = new H2Message();
     }
 
     public void start() throws Exception {
@@ -27,29 +25,27 @@ public class Runner {
 
         ServletContextHandler handler = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
         handler.setContextPath("/");
-        handler.setInitParameter("org.eclipse.jetty.servlet.Default." + "resourceBase", "src/main/resources/webapp");
-
-        handler.addServlet(new ServletHolder(new MessageServlet(h2Message)), "/index");
+        handler.setInitParameter("org.eclipse.jetty.servlet.Default.resourceBase", "src/main/webapp");
+//        handler.setResourceBase("src/main/webapp");
+//        System.out.println(handler.getResourceBase());
         handler.addServlet(new ServletHolder(new LoginServlet()), "/login");
         handler.addServlet(new ServletHolder(new Welcome()), "/Welcome");
-        handler.addServlet(new ServletHolder(new MessageServlet(h2Message)), "/add"); // we post to here
 
-//        DefaultServlet ds = new DefaultServlet();
-//        handler.addServlet(new ServletHolder(ds), "/");
+        DefaultServlet ds = new DefaultServlet();
+        handler.addServlet(new ServletHolder(ds), "/");
 
         server.start();
         LOG.info("Server started, will run until terminated");
-        System.out.println("Server started, will run until terminated");
         server.join();
     }
 
     public static void main(String[] args) {
         try {
-            LOG.info("starting message board");
+            LOG.info("starting Milestone Planner");
             Runner runner = new Runner();
             runner.start();
         } catch (Exception e) {
-            LOG.error("Unexpected error running message board: " + e.getMessage());
+            LOG.error("Unexpected error running Milestone Planner: " + e.getMessage());
             e.printStackTrace();
         }
     }

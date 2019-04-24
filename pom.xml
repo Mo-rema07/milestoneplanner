@@ -52,14 +52,7 @@
             <artifactId>commons-codec</artifactId>
             <version>1.6</version>
         </dependency>
-        <!--        <dependency>-->
-<!--            <groupId>org.eclipse.jetty</groupId>-->
-<!--            <artifactId>jetty-maven-plugin</artifactId>-->
-<!--            <version>9.4.15.v20190215</version>-->
-<!--            <type>maven-plugin</type>-->
-<!--        </dependency>-->
     </dependencies>
-
     <build>
         <finalName>milestoneplanner</finalName>
         <plugins>
@@ -67,15 +60,7 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jettyVersion}</version>
-<!--                <type>maven-plugin</type>-->
             </plugin>
-
-<!--            <plugin>-->
-<!--                &lt;!&ndash; This plugin is needed for the servlet example &ndash;&gt;-->
-<!--                <groupId>org.mortbay.jetty</groupId>-->
-<!--                <artifactId>jetty-maven-plugin</artifactId>-->
-<!--                <version>${jettyVersion}</version>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

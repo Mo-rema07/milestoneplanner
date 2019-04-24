@@ -12,6 +12,9 @@ public class UserList {
 		list.add(detail);
 	}
 
+	public void put(User user){
+		list.add(user);
+	}
 	public String get(String userName){
 		for (User det : list){
 			if (det.getUserName().equals(userName)){
