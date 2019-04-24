@@ -13,6 +13,7 @@ public class UserLogin  implements IUserLogin{
 
 	public UserLogin() {
 		this.userList = UserDAO.getUsers();
+		System.out.println(userList.get("morema"));
 	}
 
 	@Override

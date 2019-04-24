@@ -7,15 +7,11 @@ import com.group_2.milestonePlanner.repo.UserList;
 import java.util.ArrayList;
 
 public class UserDAO {
-	public static UserList userList;
-
-	public UserDAO() {
-		userList = new UserList();
-	}
+	public static UserList userList = new UserList();
 
 	public static UserList getUsers(){
 		String hash = PasswordHash.createHash("morema");
-		User morema = new User("morema", "morema");
+		User morema = new User("morema", hash);
 		userList.put(morema);
 		return userList;
 	}

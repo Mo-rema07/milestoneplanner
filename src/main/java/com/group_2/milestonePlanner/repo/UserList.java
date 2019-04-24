@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class UserList {
 	ArrayList<User> list;
 
+	public UserList() {
+		this.list = new ArrayList<>();
+	}
+
 	public void put(String userName, String hash){
 		User detail = new User(userName, hash);
 		list.add(detail);
