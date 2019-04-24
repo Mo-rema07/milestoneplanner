@@ -41,16 +41,11 @@ public class ProjectServlet extends HttpServlet {
 		projectList.put(project2);
 
 		req.setAttribute("ProjectList",projectList.getList());
-		req.setAttribute("Title", "Landing Page");
-		req.setAttribute("test", "test");
-		req.setAttribute("project", project);
+
 
 		RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 		rs.include(req, resp);
 
-		for (Project p: projectList.getList()){
-
-		}
 	}
 }
 

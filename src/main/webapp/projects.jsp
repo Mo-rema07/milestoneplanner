@@ -49,12 +49,10 @@
     <div class="projectsList">
         <h1>Available Projects</h1>
         <ul>
-            <% for(int i = 0; i < projectList.size(); i+=1) { %>
-                System.out.println("");
-            <% } %>
-<%--            <c:forEach var="project" items="${ProjectList}">--%>
-<%--                <li><a href="/projects/milestones?project= <c:out value="${project.getName()}""> <c:out value="${project.getName()}" /> </a></li>--%>
-<%--            </c:forEach>--%>
+
+            <c:forEach var="project" items="${ProjectList}">
+                <li> <c:out value="${project.getName()}" /> </li>
+            </c:forEach>
         </ul>
     </div>
 

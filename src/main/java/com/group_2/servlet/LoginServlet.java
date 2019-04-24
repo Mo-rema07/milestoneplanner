@@ -22,11 +22,11 @@ public class LoginServlet  extends HttpServlet {
 		if (email == null) {
 			System.out.println(email);
 			UserLogin.register(name,pass,email);
-			response.sendRedirect("/projects");
+			response.sendRedirect("/milestone");
 		} else {
 			if(UserLogin.login(name,pass))
 			{
-				response.sendRedirect("/projects");
+				response.sendRedirect("/milestone");
 			}
 			else
 			{
