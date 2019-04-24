@@ -4,7 +4,6 @@ import com.group_2.milestonePlanner.auth.PasswordHash;
 import com.group_2.milestonePlanner.model.User;
 import com.group_2.milestonePlanner.repo.UserList;
 
-import java.util.ArrayList;
 
 public class UserDAO {
 	public static UserList userList = new UserList();

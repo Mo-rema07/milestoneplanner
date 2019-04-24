@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class Milestone {
 	private boolean isComplete;
+	private boolean hasStarted;
 	private String name;
 	private Date dueDate;
 	private Date completionDate;

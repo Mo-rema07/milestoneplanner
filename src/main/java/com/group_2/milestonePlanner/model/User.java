@@ -3,6 +3,7 @@ package com.group_2.milestonePlanner.model;
 public class User {
 	String userName;
 	String passwordHash;
+	String email;
 
 	public User(String userName, String passwordHash) {
 		this.userName = userName;
