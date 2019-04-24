@@ -1,11 +1,13 @@
 package com.group_2.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebServlet(name ="milestone", urlPatterns = "/milestone")
 public class MilestoneServlet extends HttpServlet {
 
 	@Override

@@ -7,7 +7,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-//@WebServlet(urlPatterns = "/login")
+@WebServlet(name ="login" ,urlPatterns = "/login")
 public class LoginServlet  extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -27,14 +27,14 @@ public class LoginServlet  extends HttpServlet {
 		else
 		{
 			out.println("Username or Password incorrect");
-			RequestDispatcher rs = request.getRequestDispatcher("/login.html");
+			RequestDispatcher rs = request.getRequestDispatcher("/login.jsp");
 			rs.include(request, response);
 		}
 	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rs =request.getRequestDispatcher("/login.html");
+		RequestDispatcher rs =request.getRequestDispatcher("/login.jsp");
 		rs.include(request, response);
 
 	}

@@ -3,10 +3,10 @@ package com.group_2.milestonePlanner.model;
 import java.util.ArrayList;
 
 public class Project {
-	String name;
-	User owner;
-	ArrayList<Milestone> milestones;
-	double progress;
+	private String name;
+	private User owner;
+	private ArrayList<Milestone> milestones;
+	private double progress;
 
 	public Project(User owner, String name) {
 		this.name = name;
@@ -32,5 +32,21 @@ public class Project {
 			}
 		}
 		this.progress = (double) complete/ (double) milestones.size();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public ArrayList<Milestone> getMilestones() {
+		return milestones;
+	}
+
+	public double getProgress() {
+		return progress;
 	}
 }

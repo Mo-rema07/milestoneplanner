@@ -9,8 +9,7 @@
   <p>${project.name}</p>
   <p>WELCOME</p>
       <c:forEach var="project" items="${ProjectList}">
-          <c:out value="${project.name}" />
-          <p>Hi</p>
+          <c:out value="${project.getName()}" />
       </c:forEach>
   </body>
 
