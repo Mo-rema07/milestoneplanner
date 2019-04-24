@@ -7,7 +7,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet(urlPatterns = "/login")
+//@WebServlet(urlPatterns = "/login")
 public class LoginServlet  extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +21,7 @@ public class LoginServlet  extends HttpServlet {
 		UserLogin userLogin = new UserLogin();
 		if(userLogin.login(pass,email))
 		{
-			RequestDispatcher rs = request.getRequestDispatcher("Welcome");
+			RequestDispatcher rs = request.getRequestDispatcher("/");
 			rs.forward(request, response);
 		}
 		else

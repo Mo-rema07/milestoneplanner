@@ -10,6 +10,10 @@ public class User {
 		this.passwordHash = passwordHash;
 	}
 
+	public User(String userName) {
+		this.userName = userName;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
