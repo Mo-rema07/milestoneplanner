@@ -99,9 +99,8 @@ public class Milestone {
 
 //TODO: Signup message
 //TODO:	delete edit and share
-//TODO:	change when logging to lead you to projects
 //TODO:	Rethabile check boxes for progress
-//TODO: find a way to share a database
+//TODO: find a way to share a project
 //TODO:	link projects to users and milestones to projects
 //TODO:	Session Management
 //TODO: Progress Bar
