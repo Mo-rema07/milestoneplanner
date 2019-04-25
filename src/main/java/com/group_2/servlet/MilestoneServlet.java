@@ -17,7 +17,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-@WebServlet(name ="milestone", urlPatterns = "/milestone")
+@WebServlet(name ="milestone", urlPatterns = "/milestones")
 public class MilestoneServlet extends HttpServlet {
 
 

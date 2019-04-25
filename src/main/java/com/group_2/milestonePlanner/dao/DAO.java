@@ -118,25 +118,26 @@ public class DAO {
 		}
 	}
 
-//	public static MilestoneList loadMilestones(){
-//		final String LIST_MILESTONE_QUERY = "SELECT * FROM milestone";
-//		MilestoneList list = new MilestoneList()
-//		try(PreparedStatement ps = conn.prepareStatement(LIST_MILESTONE_QUERY)) {
-//			ResultSet rs = ps.executeQuery();
-//			while(rs.next()){
-//				int isComplete = rs.getInt("isComplete");
-//				int hasStarted = rs.getInt("hasStarted");
-//				Date dueDate = rs.getDate("dueDate");
-//				Date completionDate = rs.getDate("completionDate");
-//				String name = rs.getString("name");
-//				int pk_project_id = rs.getInt("pk_project_id");
-//				list.put(new Milestone((boolean) isComplete, (boolean)hasStarted, dueDate, completionDate, name, pk_project_id))
-//			}
-//		} catch (SQLException e) {
-//			throw new RuntimeException(e);
-//		}
-//		return list;
-//	}
+	public static MilestoneList loadMilestones(){
+		final String LIST_MILESTONE_QUERY = "SELECT * FROM milestone";
+		MilestoneList list = new MilestoneList();
+		try(PreparedStatement ps = conn.prepareStatement(LIST_MILESTONE_QUERY)) {
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				boolean isComplete = rs.getInt("isComplete") == 1;
+				boolean hasStarted = rs.getInt("hasStarted") == 1;
+				Date dueDate = rs.getDate("dueDate");
+				Date completionDate = rs.getDate("completionDate");
+				String name = rs.getString("name");
+				int pk_project_id = rs.getInt("pk_project_id");
+				list.put(new Milestone( isComplete, hasStarted, name, dueDate,
+						completionDate, pk_project_id));
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+	}
 
 	public static void addMilestone (Milestone milestone){
 		milestones.put(milestone);

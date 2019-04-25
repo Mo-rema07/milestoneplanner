@@ -20,11 +20,11 @@ public class LoginServlet  extends HttpServlet {
 		String email = request.getParameter("email");
 		if (email != null) {
 			UserLogin.register(name,pass,email);
-			response.sendRedirect("/milestone");
+			response.sendRedirect("/projects");
 		} else {
 			if(UserLogin.login(name,pass))
 			{
-				response.sendRedirect("/milestone");
+				response.sendRedirect("/projects");
 			}
 			else
 			{
