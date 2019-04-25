@@ -1,6 +1,8 @@
 package com.group_2.milestonePlanner.model;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Milestone {
 	private boolean isComplete;
@@ -9,15 +11,23 @@ public class Milestone {
 	private Date dueDate;
 	private Date completionDate;
 
-	public Milestone(boolean isComplete, String name, Date dueDate) {
-		this.isComplete = isComplete;
+	public Milestone(String name, Date dueDate) {
+		this.isComplete = false;
+		this.hasStarted = false;
 		this.name = name;
 		this.dueDate = dueDate;
-		this.completionDate = null;
 	}
 
 	public Milestone(String name) {
 		this.name = name;
+	}
+
+	public boolean hasStarted() {
+		return hasStarted;
+	}
+
+	public void setHasStarted(boolean hasStarted) {
+		this.hasStarted = hasStarted;
 	}
 
 	public boolean isComplete() {
@@ -36,12 +46,24 @@ public class Milestone {
 		this.name = name;
 	}
 
-	public Date getDueDate() {
-		return dueDate;
+	public String getDueDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return formatter.format(this.dueDate);
 	}
 
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
+	}
+
+	public void setDueDate(String dueDate) {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date utilDate = null;
+		try {
+			utilDate = formatter.parse(dueDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		this.dueDate = new Date(utilDate.getTime());
 	}
 
 	public Date getCompletionDate() {

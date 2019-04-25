@@ -11,6 +11,9 @@ import java.sql.*;
 
 
 public class DAO {
+	private static MilestoneList milestones = new MilestoneList();
+
+
 
 	private static String db_url = "jdbc:sqlite:planner.db";
 	private static Connection conn;
@@ -116,12 +119,40 @@ public class DAO {
 	}
 
 	public static MilestoneList loadMilestones(){
-		return new MilestoneList();
+		MilestoneList allMilestones = new MilestoneList();
+		Milestone milestone = new Milestone("first");
+		Milestone milestone1 = new Milestone("second");
+		Milestone milestone2 = new Milestone("third");
+		Milestone milestone3 = new Milestone("fourth");
+		Milestone milestone4 = new Milestone("fifth");
+
+		milestone1.setHasStarted(true);
+		milestone2.setHasStarted(true);
+		milestone2.setComplete(true);
+		milestone3.setHasStarted(true);
+		milestone4.setHasStarted(true);
+
+		java.util.Date utilDate = new java.util.Date();
+		Date sqlDate = new java.sql.Date(utilDate.getTime());
+
+		milestone.setDueDate(sqlDate);
+		milestone1.setDueDate(sqlDate);
+		milestone2.setDueDate(sqlDate);
+		milestone3.setDueDate(sqlDate);
+		milestone4.setDueDate(sqlDate);
+
+		allMilestones.put(milestone);
+		allMilestones.put(milestone1);
+		allMilestones.put(milestone2);
+		allMilestones.put(milestone3);
+		allMilestones.put(milestone4);
+		milestones =allMilestones;
+		return milestones;
 	}
 
 	public static void addMilestone (Milestone milestone){
-
+		milestones.put(milestone);
 	}
-	
+
 
 }

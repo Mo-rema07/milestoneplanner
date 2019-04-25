@@ -20,7 +20,6 @@ public class ProjectServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-
 		String name = req.getParameter("ptitle");
 		Project project = new Project(name);
 		DAO.addProject(project);

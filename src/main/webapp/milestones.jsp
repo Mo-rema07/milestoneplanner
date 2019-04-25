@@ -18,17 +18,11 @@
         <img src="img/logo.png" alt="logo">
     </header>
 
-    <!-- Milestones Section -->
+    <!-- Not Started -->
     <div class="milestones">
 
         <div class="projectsList">
-            <h1>Available Milestones</h1>
-            <ul>
-
-                <c:forEach items="${milestoneList}">
-                    <li> <c:out value="${milestoneList.getName()}" /> </li>
-                </c:forEach>
-            </ul>
+            <h1> Not Started</h1>
         </div>
 
         <div class="gallery">
@@ -39,11 +33,10 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <form action="" method="post" id="addMilestone">
-                            Milestone Title:<br>
+                            Milestone Name:<br>
                             <label for="title" class="textLabel"></label>
                             <input type="text" name="title" id="title" required/>
                             <br>
-
                             Due <br>
                             <label for="dueDate" class="textLabel"></label>
                             <input type="date" name="dueDate" id="dueDate" required/>
@@ -55,151 +48,61 @@
 
                 </div>
             </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+            <c:forEach items="${notStarted}" var="milestone">
+                <div class="thumbnail">
+                    <div class="icons">
+                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                    </div>
+                    <h4><c:out value="${milestone.getName()}"/> </h4>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/></p>
                 </div>
-                <h4>Do Laundry</h4>
-                <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Do Laundry</h4>
-                <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Do Laundry</h4>
-                <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
-            </div>
-            <div class="thumbnail" >
-                <div id="drag1" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag1">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Do Laundry</h4>
-                <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 
+    <%-- In Progress--%>
     <div class="milestones">
         <div class="gallery">
             <h2 class="gallery-heading">In Progress</h2>
             <div class="add">
                 <button onclick=""><i class="material-icons md-24">add</i></button>
             </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+            <c:forEach items="${inProgress}" var="milestone">
+                <div class="thumbnail">
+                    <div class="icons">
+                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                    </div>
+                    <h4><c:out value="${milestone.getName()}"/></h4>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/> </p>
                 </div>
-                <h4>Web Dev Assignment</h4>
-                <p class="tag">Due: 24/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Web Dev Assignment</h4>
-                <p class="tag">Due: 24/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Web Dev Assignment</h4>
-                <p class="tag">Due: 24/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Web Dev Assignment</h4>
-                <p class="tag">Due: 24/04/2019</p>
-            </div>
+            </c:forEach>
         </div>
     </div>
 
-    <div class="milestones">
+    <%--Completed--%>
+    <div class="milestones-right">
         <div class="gallery">
             <h2 class="gallery-heading">Completed</h2>
             <div class="add">
                 <button onclick=""><i class="material-icons md-24">add</i></button>
             </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+            <c:forEach items="${completed}" var="milestone">
+                <div class="thumbnail">
+                    <div class="icons">
+                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                    </div>
+                    <h4><c:out value="${milestone.getName()}"/></h4>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/></p>
                 </div>
-                <h4>Read Stoker's Script</h4>
-                <p class="tag">Completed: 08/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Read Stoker's Script</h4>
-                <p class="tag">Completed: 08/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Read Stoker's Script</h4>
-                <p class="tag">Completed: 08/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Read Stoker's Script</h4>
-                <p class="tag">Completed: 08/04/2019</p>
-            </div>
+            </c:forEach>
         </div>
     </div>
-    <div class="milestones-right">
-        <div class="gallery">
-            <h2 class="gallery-heading">Incomplete</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Find TVD Soundtrack</h4>
-                <p class="tag">Started: 02/01/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Find TVD Soundtrack</h4>
-                <p class="tag">Started: 02/01/2019</p>
-            </div>
-            <div class="thumbnail" height="40>
-                <div <%--class="drop1"--%> ondrop="drop(event)" ondragover="allowDrop(event)">
-                </div>
 
-            </div>
-
-        </div>
-    </div>
-    <!-- Footer Section -->
-    <!--  <footer id="contact">
-       <p class="hero_header">Milestone Planner 2019</p>
-     </footer> -->
 
     <!-- Main Container Ends -->
-
-    <script src="JS/script.js"></script>
-    <script src="JS/dragNDrop.js"></script>
-
 </div>
+<script src="JS/script.js"></script>
+<script src="JS/dragNDrop.js"></script>
 </body>
 </html>
 

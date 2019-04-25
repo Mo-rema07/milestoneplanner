@@ -21,4 +21,34 @@ public class MilestoneList {
 		list.add(milestone);
 	}
 
+	public MilestoneList getInProgress(){
+		MilestoneList inProgress = new MilestoneList();
+		for (Milestone m: list){
+			if (m.hasStarted() && !m.isComplete()){
+				inProgress.put(m);
+			}
+		}
+		return inProgress;
+	}
+
+	public MilestoneList getCompleted(){
+		MilestoneList completed = new MilestoneList();
+		for (Milestone m: list){
+			if (m.hasStarted() && m.isComplete()){
+				completed.put(m);
+			}
+		}
+		return completed;
+	}
+
+	public MilestoneList getNotStarted(){
+		MilestoneList notStarted = new MilestoneList();
+		for (Milestone m: list){
+			if (!m.hasStarted()){
+				notStarted.put(m);
+			}
+		}
+		return notStarted;
+	}
+
 }

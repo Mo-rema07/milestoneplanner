@@ -51,15 +51,6 @@
     <div class="projectsList">
         <h1>Available Projects</h1>
         <ul>
-<%--            <%--%>
-<%--                --%>
-<%--                for (Project p: projectList.getList()){--%>
-<%--                System.out.println("<li><a href=\"/projects/milestones?project="+p.getName()+"\"> "+ p.getName()+ "" +--%>
-<%--                        "</a></li>");--%>
-
-<%--            }%>--%>
-<%--                System.out.println("");--%>
-<%--            <% } %>--%>
             <c:forEach var="project" items="${ProjectList}">
                 <li><a href="/milestones"> <c:out value="${project.getName()}"/>  </a></li>
             </c:forEach>
