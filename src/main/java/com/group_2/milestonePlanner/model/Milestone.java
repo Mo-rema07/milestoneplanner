@@ -5,8 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Milestone {
-	private boolean isComplete;
-	private boolean hasStarted;
+	private boolean isComplete = false;
+	private boolean hasStarted =false;
 	private String name;
 	private Date dueDate;
 	private Date completionDate;
