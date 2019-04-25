@@ -12,7 +12,12 @@ public class Milestone {
 	private Date completionDate;
 	private int project_id;
 
-
+	public Milestone(boolean isComplete, boolean hasStarted, String name, int project_id) {
+		this.isComplete = isComplete;
+		this.hasStarted = hasStarted;
+		this.name = name;
+		this.project_id = project_id;
+	}
 
 	public Milestone(String name, Date dueDate) {
 		this.isComplete = false;
@@ -59,8 +64,24 @@ public class Milestone {
 		this.name = name;
 	}
 
-	public String getDueDate() {
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	public boolean isHasStarted() {
+		return hasStarted;
+	}
+
+	public int getProject_id() {
+		return project_id;
+	}
+
+	public void setProject_id(int project_id) {
+		this.project_id = project_id;
+	}
+
+	public String getStringDueDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
 		return formatter.format(this.dueDate);
 	}
 
@@ -69,8 +90,8 @@ public class Milestone {
 	}
 
 	public void setDueDate(String dueDate) {
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date utilDate = null;
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
+		java.util.Date utilDate = new java.util.Date();
 		try {
 			utilDate = formatter.parse(dueDate);
 		} catch (ParseException e) {
@@ -89,9 +110,10 @@ public class Milestone {
 }
 
 //TODO: Signup message
-// TODO:Sign up
 //TODO:	delete edit and share
 //TODO:	change when logging to lead you to projects
 //TODO:	Rethabile check boxes for progress
-//TODO:		find a way to share a database
-//TODO:		link projects to users and milestones to projects
+//TODO: find a way to share a database
+//TODO:	link projects to users and milestones to projects
+//TODO:	Session Management
+//TODO: Progress Bar

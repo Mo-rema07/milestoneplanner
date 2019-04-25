@@ -59,6 +59,4 @@ public class MilestoneServlet extends HttpServlet {
 		RequestDispatcher rs = req.getRequestDispatcher("/milestones.jsp");
 		rs.include(req, resp);
 	}
-
-
 }

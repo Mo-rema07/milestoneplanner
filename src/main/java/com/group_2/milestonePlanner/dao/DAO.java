@@ -126,12 +126,12 @@ public class DAO {
 			while(rs.next()){
 				boolean isComplete = rs.getInt("isComplete") == 1;
 				boolean hasStarted = rs.getInt("hasStarted") == 1;
-				Date dueDate = rs.getDate("dueDate");
-				Date completionDate = rs.getDate("completionDate");
+				String due = rs.getString("dueDate");
+				String completion = rs.getString("completionDate");
 				String name = rs.getString("name");
-				int pk_project_id = rs.getInt("pk_project_id");
-				list.put(new Milestone( isComplete, hasStarted, name, dueDate,
-						completionDate, pk_project_id));
+				int pk_project_id = rs.getInt("fk_project_id");
+				list.put(new Milestone( isComplete, hasStarted, name,
+						 pk_project_id));
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -140,7 +140,18 @@ public class DAO {
 	}
 
 	public static void addMilestone (Milestone milestone){
-		milestones.put(milestone);
+		int isComplete = milestone.isComplete() ? 1 : 0;
+		int hasStarted = milestone.hasStarted() ? 1 : 0;
+
+		String ADD_MILESTONE_QUERY = "INSERT INTO milestone (isComplete, hasStarted, dueDate, completionDate, name," +
+				" fk_project_id) VALUES ( \'"+ isComplete+"\',\'"+ hasStarted +"\',\'"+ milestone.getDueDate()+"\',\'"+
+				milestone.getCompletionDate()+ "\',\'"+ milestone.getName() + "\',\'"+ milestone.getProject_id()+"\')";
+
+		try (PreparedStatement ps = conn.prepareStatement(ADD_MILESTONE_QUERY)) {
+			ps.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 
