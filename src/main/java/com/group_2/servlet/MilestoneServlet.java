@@ -2,9 +2,8 @@ package com.group_2.servlet;
 
 import com.group_2.milestonePlanner.dao.DAO;
 import com.group_2.milestonePlanner.model.Milestone;
-import com.group_2.milestonePlanner.model.Project;
 import com.group_2.milestonePlanner.repo.MilestoneList;
-import com.group_2.milestonePlanner.repo.ProjectList;
+import com.group_2.util.DateParser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 @WebServlet(name ="milestone", urlPatterns = "/milestones")
 public class MilestoneServlet extends HttpServlet {
@@ -43,7 +39,7 @@ public class MilestoneServlet extends HttpServlet {
 		String name = req.getParameter("title");
 		String dueDate = req.getParameter("dueDate");
 		Milestone milestone = new Milestone(name);
-		milestone.setDueDate(dueDate);
+		milestone.setDueDate(DateParser.toDate(dueDate));
 
 		DAO.addMilestone(milestone);
 		MilestoneList allMilestones= DAO.loadMilestones();

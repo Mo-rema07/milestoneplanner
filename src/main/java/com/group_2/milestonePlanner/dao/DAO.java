@@ -6,6 +6,7 @@ import com.group_2.milestonePlanner.model.User;
 import com.group_2.milestonePlanner.repo.MilestoneList;
 import com.group_2.milestonePlanner.repo.ProjectList;
 import com.group_2.milestonePlanner.repo.UserList;
+import com.group_2.util.DateParser;
 
 import java.sql.*;
 
@@ -132,8 +133,8 @@ public class DAO {
 				int pk_project_id = rs.getInt("fk_project_id");
 				Milestone milestone = new Milestone( isComplete, hasStarted, name,
 						pk_project_id);
-				milestone.setDueDate(due);
-				milestone.setCompletionDate(completion);
+				milestone.setDueDate(DateParser.toDate(due));
+				milestone.setCompletionDate(DateParser.toDate(completion));
 				list.put(milestone);
 			}
 		} catch (SQLException e) {
