@@ -87,3 +87,11 @@ public class Milestone {
 		this.completionDate = completionDate;
 	}
 }
+
+//TODO: Signup message
+// TODO:Sign up
+//TODO:	delete edit and share
+//TODO:	change when logging to lead you to projects
+//TODO:	Rethabile check boxes for progress
+//TODO:		find a way to share a database
+//TODO:		link projects to users and milestones to projects
