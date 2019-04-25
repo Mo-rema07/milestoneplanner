@@ -16,6 +16,10 @@ public class Milestone {
 		this.completionDate = null;
 	}
 
+	public Milestone(String name) {
+		this.name = name;
+	}
+
 	public boolean isComplete() {
 		return isComplete;
 	}

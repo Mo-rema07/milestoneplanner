@@ -72,4 +72,3 @@
 <script src="JS/projectsModal.js"></script>
 </body>
 </html>
-
