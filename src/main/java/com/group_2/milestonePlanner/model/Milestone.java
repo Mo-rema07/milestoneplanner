@@ -85,6 +85,11 @@ public class Milestone {
 		return formatter.format(this.dueDate);
 	}
 
+	public String getStringCompletionDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
+		return formatter.format(this.completionDate);
+	}
+
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
@@ -98,6 +103,17 @@ public class Milestone {
 			e.printStackTrace();
 		}
 		this.dueDate = new Date(utilDate.getTime());
+	}
+
+	public void setCompletionDate(String completionDate) {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
+		java.util.Date utilDate = new java.util.Date();
+		try {
+			utilDate = formatter.parse(completionDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		this.completionDate = new Date(utilDate.getTime());
 	}
 
 	public Date getCompletionDate() {

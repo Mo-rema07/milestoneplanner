@@ -93,6 +93,7 @@
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/></p>
+                    <p class="tag"><i class="material-icons md-18">check</i> Completed on: <c:out value="${milestone.getDueDate()}"/></p>
                 </div>
             </c:forEach>
         </div>

@@ -130,8 +130,11 @@ public class DAO {
 				String completion = rs.getString("completionDate");
 				String name = rs.getString("name");
 				int pk_project_id = rs.getInt("fk_project_id");
-				list.put(new Milestone( isComplete, hasStarted, name,
-						 pk_project_id));
+				Milestone milestone = new Milestone( isComplete, hasStarted, name,
+						pk_project_id);
+				milestone.setDueDate(due);
+				milestone.setCompletionDate(completion);
+				list.put(milestone);
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
