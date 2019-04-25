@@ -1,3 +1,5 @@
+<%@ page import="com.group_2.milestonePlanner.model.Project" %>
+<%@ page import="com.group_2.milestonePlanner.repo.ProjectList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -49,12 +51,18 @@
     <div class="projectsList">
         <h1>Available Projects</h1>
         <ul>
-            <% for(int i = 0; i < projectList.size(); i+=1) { %>
-                System.out.println("");
-            <% } %>
-<%--            <c:forEach var="project" items="${ProjectList}">--%>
-<%--                <li><a href="/projects/milestones?project= <c:out value="${project.getName()}""> <c:out value="${project.getName()}" /> </a></li>--%>
-<%--            </c:forEach>--%>
+<%--            <%--%>
+<%--                --%>
+<%--                for (Project p: projectList.getList()){--%>
+<%--                System.out.println("<li><a href=\"/projects/milestones?project="+p.getName()+"\"> "+ p.getName()+ "" +--%>
+<%--                        "</a></li>");--%>
+
+<%--            }%>--%>
+<%--                System.out.println("");--%>
+<%--            <% } %>--%>
+            <c:forEach var="project" items="${ProjectList}">
+                <li><a href="/milestones"> <c:out value="${project.getName()}"/>  </a></li>
+            </c:forEach>
         </ul>
     </div>
 

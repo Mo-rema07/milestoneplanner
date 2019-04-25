@@ -20,9 +20,9 @@ public class UserList {
 		list.add(user);
 	}
 	public String get(String userName){
-		for (User det : list){
-			if (det.getUserName().equals(userName)){
-				return det.getPasswordHash();
+		for (User user : list){
+			if (user.getUserName().equals(userName)){
+				return user.getPasswordHash();
 			}
 		}
 		return null;

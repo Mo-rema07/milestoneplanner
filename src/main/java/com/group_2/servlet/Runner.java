@@ -2,6 +2,7 @@
 package com.group_2.servlet;
 
 
+import com.group_2.milestonePlanner.dao.DAO;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
@@ -20,6 +21,9 @@ public class Runner {
     static final Logger LOG = LoggerFactory.getLogger(Runner.class);
 
     public static void main(String[] args) throws ServletException {
+
+        //Create db tables if they do not exist
+        DAO.createTables();
 
         Tomcat tomcat = new Tomcat();
         //The port that we should run on can be set into an environment variable

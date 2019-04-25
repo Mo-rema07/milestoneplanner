@@ -1,6 +1,7 @@
 package com.group_2.milestonePlanner.auth;
 
-import com.group_2.milestonePlanner.dao.UserDAO;
+import com.group_2.milestonePlanner.dao.DAO;
+import com.group_2.milestonePlanner.model.User;
 import com.group_2.milestonePlanner.repo.UserList;
 import lombok.NonNull;
 
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class UserLogin  implements IUserLogin{
 	static final Logger LOG = LoggerFactory.getLogger(UserLogin.class);
-	static UserList userList = UserDAO.getUsers();
+	static UserList userList = DAO.loadUsers();
 
 
 	public static synchronized boolean login(@NonNull String userName, @NonNull String password) {
@@ -24,7 +25,8 @@ public class UserLogin  implements IUserLogin{
 		}
 		try {
 			String hash = PasswordHash.createHash(password);
-			userList.put(userName, hash, email);
+			DAO.addUser(new User(userName, hash, email));
+			userList = DAO.loadUsers();
 			return true;
 		}
 		catch(Exception e){

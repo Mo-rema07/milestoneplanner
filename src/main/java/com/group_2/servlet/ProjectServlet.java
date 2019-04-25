@@ -48,9 +48,6 @@ public class ProjectServlet extends HttpServlet {
 		RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 		rs.include(req, resp);
 
-		for (Project p: projectList.getList()){
-
-		}
 	}
 }
 

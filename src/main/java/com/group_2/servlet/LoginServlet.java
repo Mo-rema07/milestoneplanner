@@ -18,9 +18,7 @@ public class LoginServlet  extends HttpServlet {
 		String name = request.getParameter("user");
 		String pass = request.getParameter("password");
 		String email = request.getParameter("email");
-
-		if (email == null) {
-			System.out.println(email);
+		if (email != null) {
 			UserLogin.register(name,pass,email);
 			response.sendRedirect("/projects");
 		} else {
