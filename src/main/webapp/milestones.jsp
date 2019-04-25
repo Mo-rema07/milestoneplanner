@@ -19,7 +19,7 @@
     </header>
 
     <!-- Milestones Section -->
-    <div class="milestones">
+    <div class="milestones-left">
 
         <div class="gallery">
             <h2 class="gallery-heading">Milestones</h2>
@@ -51,6 +51,12 @@
                 </div>
                 <h4>Do Laundry</h4>
                 <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Started
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </form>
             </div>
             <div class="thumbnail">
                 <div class="icons">
@@ -58,6 +64,12 @@
                 </div>
                 <h4>Do Laundry</h4>
                 <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Started
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </form>
             </div>
             <div class="thumbnail">
                 <div class="icons">
@@ -65,6 +77,12 @@
                 </div>
                 <h4>Do Laundry</h4>
                 <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Started
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </form>
             </div>
             <div class="thumbnail" >
                 <div id="drag1" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag1">
@@ -73,6 +91,12 @@
                 </div>
                 <h4>Do Laundry</h4>
                 <p class="tag"><i class="material-icons md-18">watch_later</i> Due: 25/04/2019</p>
+                  <form action="" method="post" class="milestoneStatus">
+                    <label class="checkbox-container">Started
+                      <input type="checkbox" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                  </form>
                 </div>
             </div>
         </div>
@@ -80,9 +104,19 @@
 
     <div class="milestones">
         <div class="gallery">
-            <h2 class="gallery-heading">In Progress</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
+            <h2 class="gallery-heading1">In Progress</h2>
+            <div class="thumbnail">
+                <div class="icons">
+                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                </div>
+                <h4>Web Dev Assignment</h4>
+                <p class="tag">Due: 24/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Completed
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </form>
             </div>
             <div class="thumbnail">
                 <div class="icons">
@@ -90,6 +124,12 @@
                 </div>
                 <h4>Web Dev Assignment</h4>
                 <p class="tag">Due: 24/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Completed
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+              </form>
             </div>
             <div class="thumbnail">
                 <div class="icons">
@@ -97,6 +137,11 @@
                 </div>
                 <h4>Web Dev Assignment</h4>
                 <p class="tag">Due: 24/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Completed
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+              </form>
             </div>
             <div class="thumbnail">
                 <div class="icons">
@@ -104,23 +149,18 @@
                 </div>
                 <h4>Web Dev Assignment</h4>
                 <p class="tag">Due: 24/04/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Web Dev Assignment</h4>
-                <p class="tag">Due: 24/04/2019</p>
+              <form action="" method="post" class="milestoneStatus">
+                <label class="checkbox-container">Completed
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+              </form>
             </div>
         </div>
     </div>
 
     <div class="milestones">
         <div class="gallery">
-            <h2 class="gallery-heading">Completed</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
-            </div>
+            <h2 class="gallery-heading1">Completed</h2>
             <div class="thumbnail">
                 <div class="icons">
                     <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
@@ -151,31 +191,6 @@
             </div>
         </div>
     </div>
-    <div class="milestones-right">
-        <div class="gallery">
-            <h2 class="gallery-heading">Incomplete</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Find TVD Soundtrack</h4>
-                <p class="tag">Started: 02/01/2019</p>
-            </div>
-            <div class="thumbnail">
-                <div class="icons">
-                    <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
-                </div>
-                <h4>Find TVD Soundtrack</h4>
-                <p class="tag">Started: 02/01/2019</p>
-            </div>
-            <div class="thumbnail" height="40>
-                <div class="drop1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                </div>
-
-            </div>
 
         </div>
     </div>
