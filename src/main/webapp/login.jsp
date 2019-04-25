@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body background="img/bg.jpg">
 
 <!-- Main Container -->
-<div class="container">
+<div class="login-container">
     <!-- Header -->
     <header>
-        <img src="img/logo.png" alt="logo">
+        <img src="img/logo2.png" alt="logo">
     </header>
 
 </div>

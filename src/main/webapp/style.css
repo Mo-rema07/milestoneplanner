@@ -5,6 +5,11 @@ body {
     background-color: rgb(247, 247, 247);
     margin: 0;
 }
+body{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 h1, h2, h3, h4{
     color: rgb(148,0,211);
@@ -15,15 +20,15 @@ h1, h2, h3, h4{
 /* login section */
 .login{
     width: 10vw;
-    margin-left: auto;
+    margin-left: 20%;
     margin-right: auto;
     padding-bottom: 2%;
     margin-top: 10%;
 }
 .login button{
     border: hidden;
-    border-radius: 60px;
-    padding: 10px 60px;
+    border-radius: none;
+    padding: 20px 60px;
     background-color: rgb(148,0,211);
     color: white;
     cursor: pointer;
@@ -43,7 +48,7 @@ h1, h2, h3, h4{
 /* signup */
 .signup{
     width: 9.5vw;
-    margin-left: auto;
+    margin-left: 20%;
     margin-right: auto;
 }
 #SignUp{
@@ -51,12 +56,12 @@ h1, h2, h3, h4{
 
 }
 .signup button{
+  margin-left: 7%;
     background-color: rgba(0,0,0,0.1);
     border:1px solid white;
-    border-radius: 60px;
     cursor: pointer;
     color: white;
-    padding: 10px 30px;
+    padding: 20px 35px;
 }
 
 
@@ -78,11 +83,21 @@ h1, h2, h3, h4{
     margin-right: auto;
     background-color: #FFFFFF;
 }
+.login-container{
+  width: 90%;
+  margin-left: auto%;
+  margin-right: auto;
+}
+.login-container header{
+  margin-left: 5%;
+  margin-top: 1%;
+}
 
 header{
-    background-color:rgb(247, 247, 247);
+  background-color:transparent ;
     margin-top: 1%;
     height: 8vh;
+
 }
 
 .logo{
@@ -107,19 +122,22 @@ header{
 }
 
 .milestones{
-    width: 18vw;
+    width: 20vw;
     height: auto;
     float: left;
     border: hidden;
-    margin-right: 6.1%;
+    margin-right: 8%;
     margin-top: 1%;
 }
-.milestones-right{
-    width: 18vw;
+
+.milestones-left{
+    width: 20vw;
     height: auto;
     float: left;
     border:hidden;
     margin-top: 1%;
+  margin-left:7%;
+  margin-right: 8%;
 }
 .gallery {
     clear: both;
@@ -139,6 +157,13 @@ header{
     margin-right: auto;
     margin-bottom: 0%;
     color: rgb(148,0,211);
+}
+.gallery-heading1{
+  width: 10vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25%;
+  color: rgb(148,0,211);
 }
 .thumbnail {
     width: 95%;
@@ -229,6 +254,81 @@ header{
     border: 2px solid #52BAD5;
     border-radius: 5px;
 }
+
+/*milestones checkbox*/
+.milestoneStatus{
+  width:20%;
+  margin-left: 8%;
+
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 0px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container {
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/*custom checkbox*/
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #52BAD5;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
 #addMilestone input[type=date]{
     width: 80%;

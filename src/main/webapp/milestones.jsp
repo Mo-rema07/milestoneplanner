@@ -19,7 +19,7 @@
     </header>
 
     <!-- Not Started -->
-    <div class="milestones">
+    <div class="milestones-left">
 
         <div class="projectsList">
             <h1> Not Started</h1>
@@ -106,4 +106,3 @@
 <script src="JS/dragNDrop.js"></script>
 </body>
 </html>
-
