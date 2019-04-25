@@ -19,7 +19,8 @@ public class UserList {
 	public void put(User user){
 		list.add(user);
 	}
-	public String get(String userName){
+
+	public String getUserPasswordHash(String userName){
 		for (User user : list){
 			if (user.getUserName().equals(userName)){
 				return user.getPasswordHash();
@@ -27,4 +28,14 @@ public class UserList {
 		}
 		return null;
 	}
+
+	public User getUser(int id){
+		for (User user : list){
+			if (user.getUser_id() == id){
+				return user;
+			}
+		}
+		return null;
+	}
+
 }

@@ -4,24 +4,17 @@ import java.util.ArrayList;
 
 public class Project {
 	private String name;
-	private User owner;
-	private ArrayList<Milestone> milestones;
-	private double progress;
-
-	public Project(User owner, String name) {
-		this.name = name;
-		this.owner = owner;
-		this.milestones = new ArrayList<>();
-		this.progress = 0;
-	}
+	private int ownerId;
+	private ArrayList<Milestone> milestones = new ArrayList<>();
+	private double progress = 0;
 
 	public Project(String name) {
 		this.name = name;
 	}
 
-	public void addMilestone(Milestone milestone){
-		this.milestones.add(milestone);
-		updateProgress();
+	public Project(String name, int ownerId) {
+		this.name = name;
+		this.ownerId = ownerId;
 	}
 
 	private void updateProgress(){
@@ -34,12 +27,12 @@ public class Project {
 		this.progress = (double) complete/ (double) milestones.size();
 	}
 
-	public String getName() {
-		return name;
+	public int getOwnerId() {
+		return ownerId;
 	}
 
-	public User getOwner() {
-		return owner;
+	public String getName() {
+		return name;
 	}
 
 	public ArrayList<Milestone> getMilestones() {
@@ -48,5 +41,17 @@ public class Project {
 
 	public double getProgress() {
 		return progress;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setMilestones(ArrayList<Milestone> milestones) {
+		this.milestones = milestones;
+	}
+
+	public void setProgress(double progress) {
+		this.progress = progress;
 	}
 }

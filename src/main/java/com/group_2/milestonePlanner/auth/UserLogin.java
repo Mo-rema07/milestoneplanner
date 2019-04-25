@@ -14,12 +14,12 @@ public class UserLogin  implements IUserLogin{
 
 
 	public static synchronized boolean login(@NonNull String userName, @NonNull String password) {
-		String storedHash = userList.get(userName);
-		return storedHash != null && PasswordHash.validatePassword(password, userList.get(userName));
+		String storedHash = userList.getUserPasswordHash(userName);
+		return storedHash != null && PasswordHash.validatePassword(password, userList.getUserPasswordHash(userName));
 	}
 
 	public static synchronized boolean register(@NonNull String userName, @NonNull String password, String email) {
-		String current = userList.get(userName);
+		String current = userList.getUserPasswordHash(userName);
 		if (current != null) {
 			return false;
 		}

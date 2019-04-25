@@ -7,9 +7,7 @@ import com.group_2.milestonePlanner.repo.MilestoneList;
 import com.group_2.milestonePlanner.repo.ProjectList;
 import com.group_2.milestonePlanner.repo.UserList;
 
-import java.io.IOException;
 import java.sql.*;
-import java.util.Scanner;
 
 
 public class DAO {
@@ -28,7 +26,7 @@ public class DAO {
 	public static void createTables(){
 		String sql =  "CREATE TABLE IF NOT EXISTS user\n" +
 				"(\n" +
-				"    pk_user_id INTEGER AUTO_INCREMENT PRIMARY KEY,\n" +
+				"    pk_user_id INTEGER PRIMARY KEY,\n" +
 				"    name VARCHAR(255),\n" +
 				"    password VARCHAR(255),\n" +
 				"    email VARCHAR(255)\n" +
@@ -38,8 +36,6 @@ public class DAO {
 				"(\n" +
 				"    pk_project_id INTEGER AUTO_INCREMENT PRIMARY KEY,\n" +
 				"    name VARCHAR(255),\n" +
-				"    owner VARCHAR(255),\n" +
-				"    email VARCHAR(255),\n" +
 				"    fk_user_id INTEGER,\n" +
 				"    FOREIGN KEY(fk_user_id) REFERENCES user(pk_user_id)\n" +
 				"\n" +
@@ -67,14 +63,15 @@ public class DAO {
 		}
 
 	}
+
 	public static UserList loadUsers(){
 		final String LIST_USERS_QUERY = "SELECT * FROM user";
 		UserList list = new UserList();
 		try (PreparedStatement ps = conn.prepareStatement(LIST_USERS_QUERY)) {
 			ResultSet rs = ps.executeQuery();
-			System.out.println(rs.getString("name"));
 			while (rs.next()) {
-				list.put(new User(rs.getString("name"),rs.getString("password"),rs.getString("email")));
+				list.put(new User(rs.getString("name"),rs.getString("password"),
+						rs.getString("email"),rs.getInt("pk_user_id")));
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -84,8 +81,8 @@ public class DAO {
 
 	public static void addUser (User user){
 		String ADD_USER_QUERY = "INSERT INTO user (name, password, email) VALUES ( \'"+
-				user.getUserName()+"\',\'"+user.getPasswordHash()+"\',\'"+
-				user.getEmail()+"\')";
+				user.getUser_id()+"\',\'"+user.getUserName()+"\',\'"+
+				user.getPasswordHash()+ "\',\'"+ user.getEmail()+"\')";
 
 		try (PreparedStatement ps = conn.prepareStatement(ADD_USER_QUERY)) {
 			ps.execute();
@@ -95,11 +92,27 @@ public class DAO {
 	}
 
 	public static ProjectList loadProjects(){
-		return new ProjectList();
+		final String LIST_PROJECTS_QUERY = "SELECT * FROM project";
+		ProjectList list = new ProjectList();
+		try(PreparedStatement ps = conn.prepareStatement(LIST_PROJECTS_QUERY)) {
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				list.put( new Project(rs.getString("name"),rs.getInt("fk_user_id")));
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
 	}
 
 	public static void addProject (Project project){
-
+		String ADD_PROJECT_QUERY = "INSERT INTO project (name, fk_user_id) VALUES ( \'"+
+				project.getName()+"\',\'"+project.getOwnerId()+"\')";
+		try (PreparedStatement ps = conn.prepareStatement(ADD_PROJECT_QUERY)) {
+			ps.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public static MilestoneList loadMilestones(){
@@ -109,14 +122,6 @@ public class DAO {
 	public static void addMilestone (Milestone milestone){
 
 	}
+	
 
-	private void loadResource(String name) {
-		try {
-			String cmd = new Scanner(getClass().getResource(name).openStream()).useDelimiter("\\Z").next();
-			PreparedStatement ps = conn.prepareStatement(cmd);
-			ps.execute();
-		} catch (SQLException | IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
 }
