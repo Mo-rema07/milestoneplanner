@@ -10,7 +10,6 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
 <!-- Main Container -->
 <div class="container">
     <!-- Header -->
@@ -18,12 +17,8 @@
         <img src="img/logo.png" alt="logo">
     </header>
 
-    <!-- Not Started -->
+    <!-- Not Started -->>
     <div class="milestones-left">
-
-        <div class="projectsList">
-            <h1> Not Started</h1>
-        </div>
 
         <div class="gallery">
             <h2 class="gallery-heading">Milestones</h2>
@@ -33,10 +28,11 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <form action="" method="post" id="addMilestone">
-                            Milestone Name:<br>
+                            Milestone Title:<br>
                             <label for="title" class="textLabel"></label>
                             <input type="text" name="title" id="title" required/>
                             <br>
+
                             Due <br>
                             <label for="dueDate" class="textLabel"></label>
                             <input type="date" name="dueDate" id="dueDate" required/>
@@ -53,8 +49,18 @@
                     <div class="icons">
                         <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
                     </div>
-                    <h4><c:out value="${milestone.getName()}"/> </h4>
-                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/></p>
+                    <h4><c:out value="${milestone.getName()}"/></h4>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
+                    <form action="" method="post" class="milestoneStatus">
+                        <label class="checkbox-container">Started
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Completed
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                    </form>
                 </div>
             </c:forEach>
         </div>
@@ -63,46 +69,60 @@
     <%-- In Progress--%>
     <div class="milestones">
         <div class="gallery">
-            <h2 class="gallery-heading">In Progress</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
-            </div>
+            <h2 class="gallery-heading1">In Progress</h2>
             <c:forEach items="${inProgress}" var="milestone">
                 <div class="thumbnail">
                     <div class="icons">
                         <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
-                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/> </p>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
+                    <form action="" method="post" class="milestoneStatus">
+                        <label class="checkbox-container">Started
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Completed
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+
+                    </form>
                 </div>
             </c:forEach>
         </div>
     </div>
 
     <%--Completed--%>
-    <div class="milestones-right">
+    <div class="milestones">
         <div class="gallery">
-            <h2 class="gallery-heading">Completed</h2>
-            <div class="add">
-                <button onclick=""><i class="material-icons md-24">add</i></button>
-            </div>
+            <h2 class="gallery-heading1">Completed</h2>
             <c:forEach items="${completed}" var="milestone">
                 <div class="thumbnail">
                     <div class="icons">
                         <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
-                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due: <c:out value="${milestone.getDueDate()}"/></p>
-                    <p class="tag"><i class="material-icons md-18">check</i> Completed on: <c:out value="${milestone.getDueDate()}"/></p>
+                    <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
+                    <form action="" method="post" class="milestoneStatus">
+                        <label class="checkbox-container">Started
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">Completed
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                        </label>
+                    </form>
                 </div>
             </c:forEach>
         </div>
     </div>
 
+    <script src="JS/script.js"></script>
+    <script src="JS/dragNDrop.js"></script>
 
-    <!-- Main Container Ends -->
 </div>
-<script src="JS/script.js"></script>
-<script src="JS/dragNDrop.js"></script>
 </body>
 </html>
+
