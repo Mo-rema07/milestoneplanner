@@ -118,37 +118,25 @@ public class DAO {
 		}
 	}
 
-	public static MilestoneList loadMilestones(){
-		MilestoneList allMilestones = new MilestoneList();
-		Milestone milestone = new Milestone("first");
-		Milestone milestone1 = new Milestone("second");
-		Milestone milestone2 = new Milestone("third");
-		Milestone milestone3 = new Milestone("fourth");
-		Milestone milestone4 = new Milestone("fifth");
-
-		milestone1.setHasStarted(true);
-		milestone2.setHasStarted(true);
-		milestone2.setComplete(true);
-		milestone3.setHasStarted(true);
-		milestone4.setHasStarted(true);
-
-		java.util.Date utilDate = new java.util.Date();
-		Date sqlDate = new java.sql.Date(utilDate.getTime());
-
-		milestone.setDueDate(sqlDate);
-		milestone1.setDueDate(sqlDate);
-		milestone2.setDueDate(sqlDate);
-		milestone3.setDueDate(sqlDate);
-		milestone4.setDueDate(sqlDate);
-
-		allMilestones.put(milestone);
-		allMilestones.put(milestone1);
-		allMilestones.put(milestone2);
-		allMilestones.put(milestone3);
-		allMilestones.put(milestone4);
-		milestones =allMilestones;
-		return milestones;
-	}
+//	public static MilestoneList loadMilestones(){
+//		final String LIST_MILESTONE_QUERY = "SELECT * FROM milestone";
+//		MilestoneList list = new MilestoneList()
+//		try(PreparedStatement ps = conn.prepareStatement(LIST_MILESTONE_QUERY)) {
+//			ResultSet rs = ps.executeQuery();
+//			while(rs.next()){
+//				int isComplete = rs.getInt("isComplete");
+//				int hasStarted = rs.getInt("hasStarted");
+//				Date dueDate = rs.getDate("dueDate");
+//				Date completionDate = rs.getDate("completionDate");
+//				String name = rs.getString("name");
+//				int pk_project_id = rs.getInt("pk_project_id");
+//				list.put(new Milestone((boolean) isComplete, (boolean)hasStarted, dueDate, completionDate, name, pk_project_id))
+//			}
+//		} catch (SQLException e) {
+//			throw new RuntimeException(e);
+//		}
+//		return list;
+//	}
 
 	public static void addMilestone (Milestone milestone){
 		milestones.put(milestone);

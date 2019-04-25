@@ -10,6 +10,9 @@ public class Milestone {
 	private String name;
 	private Date dueDate;
 	private Date completionDate;
+	private int project_id;
+
+
 
 	public Milestone(String name, Date dueDate) {
 		this.isComplete = false;
@@ -20,6 +23,16 @@ public class Milestone {
 
 	public Milestone(String name) {
 		this.name = name;
+	}
+
+	public Milestone(boolean isComplete, boolean hasStarted, String name,
+					 Date dueDate, Date completionDate, int project_id) {
+		this.isComplete = isComplete;
+		this.hasStarted = hasStarted;
+		this.name = name;
+		this.dueDate = dueDate;
+		this.completionDate = completionDate;
+		this.project_id = project_id;
 	}
 
 	public boolean hasStarted() {
