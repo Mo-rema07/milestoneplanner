@@ -10,6 +10,12 @@ public class User {
 		this.passwordHash = passwordHash;
 	}
 
+	public User(String userName, String passwordHash, String email){
+		this.userName = userName;
+		this.passwordHash = passwordHash;
+		this.email = email;
+	}
+
 	public User(String userName) {
 		this.userName = userName;
 	}

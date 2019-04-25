@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: rphur
@@ -48,18 +49,12 @@
     <div class="projectsList">
         <h1>Available Projects</h1>
         <ul>
-            <li>
-                ${name}
-            </li>
-            <li>
-                ${name}
-            </li>
-            <li>
-                ${name}
-            </li>
-            <li>
-                ${name}
-            </li>
+            <% for(int i = 0; i < projectList.size(); i+=1) { %>
+                System.out.println("");
+            <% } %>
+<%--            <c:forEach var="project" items="${ProjectList}">--%>
+<%--                <li><a href="/projects/milestones?project= <c:out value="${project.getName()}""> <c:out value="${project.getName()}" /> </a></li>--%>
+<%--            </c:forEach>--%>
         </ul>
     </div>
 
