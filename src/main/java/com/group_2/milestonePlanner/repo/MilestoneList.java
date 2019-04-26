@@ -1,7 +1,6 @@
 package com.group_2.milestonePlanner.repo;
 
 import com.group_2.milestonePlanner.model.Milestone;
-import com.group_2.milestonePlanner.model.Project;
 
 import java.util.ArrayList;
 

@@ -24,7 +24,7 @@ public class editMilestoneServlet extends HttpServlet {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
 				MilestoneList milestonesList = DAO.loadMilestones();
-				String name = req.getParameter("id");
+				String name = req.getParameter("milestone_id");
 				Milestone milestone = new Milestone(name);
 				for (Milestone m : milestonesList.getList()){
 					if(m.getName().equals(name)){
@@ -65,9 +65,10 @@ public class editMilestoneServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String name = req.getParameter("name");
-		String initialName = req.getParameter("id");
+		String initialName = req.getParameter("milestone_id");
 		String dueDate = req.getParameter("dueDate");
 		String completionDate = req.getParameter("completionDate");
+
 		boolean isComplete = Boolean.parseBoolean(req.getParameter("complete"));
 		boolean hasStarted = Boolean.parseBoolean(req.getParameter("started"));
 

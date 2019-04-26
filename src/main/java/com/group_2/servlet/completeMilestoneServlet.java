@@ -20,9 +20,11 @@ public class completeMilestoneServlet extends HttpServlet {
 		HttpSession session = req.getSession(true);
 		try {
 			String userName = session.getAttribute("userName").toString();
+//			int project_id = Integer.parseInt(req.getParameter("project_id"));
+//			req.setAttribute("project_id",project_id);
 			if (userName!=null){
 				MilestoneList allMilestones= DAO.loadMilestones();
-				String name = req.getParameter("id");
+				String name = req.getParameter("milestone_id");
 				boolean state = Boolean.parseBoolean(req.getParameter("to"));
 				for (Milestone m : allMilestones.getList()){
 					if (m.getName().equals(name)){
@@ -32,12 +34,13 @@ public class completeMilestoneServlet extends HttpServlet {
 					}
 				}
 				resp.sendRedirect("/milestones");
+
 			}
 			else{
 				resp.sendRedirect("/login");
 			}
 		}
-		catch (Exception e) {
+		catch (Exception e ) {
 			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}

@@ -23,7 +23,7 @@ public class startMilestoneServlet extends HttpServlet {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
 				MilestoneList allMilestones= DAO.loadMilestones();
-				String name = req.getParameter("id");
+				String name = req.getParameter("milestone_id");
 				boolean state = Boolean.parseBoolean(req.getParameter("to"));
 				for (Milestone m : allMilestones.getList()){
 					if (m.getName().equals(name)){

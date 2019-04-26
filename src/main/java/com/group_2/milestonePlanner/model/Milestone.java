@@ -1,8 +1,6 @@
 package com.group_2.milestonePlanner.model;
 
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class Milestone {
 	private boolean isComplete = false;
@@ -107,6 +105,5 @@ public class Milestone {
 
 //TODO: Signup message
 //TODO: find a way to share a project
-//TODO:	link milestones to projects
 //TODO: Progress Bar
 //TODO: Add salt

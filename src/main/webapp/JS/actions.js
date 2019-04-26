@@ -7,7 +7,7 @@ $(".complete").change(function () {
     else {
         newState = "false";
     }
-    window.location.href = "/isComplete?to="+newState+"&id="+mileId;
+    window.location.href = "/isComplete?to="+newState+"&milestone_id="+mileId;
 });
 
 $(".start").change(function () {
@@ -19,27 +19,27 @@ $(".start").change(function () {
     else {
         newState = "false";
     }
-    window.location.href = "/hasStarted?to="+newState+"&id="+mileId;
+    window.location.href = "/hasStarted?to="+newState+"&milestone_id="+mileId;
 });
 
 
 $(".edit").click(function () {
     let mileId = this.id.substring(3);
-    window.location.href = "/edit?id="+mileId;
+    window.location.href = "/edit?milestone_id="+mileId;
 });
 $(".share").click(function () {
     let mileId = this.id.substring(3);
-    window.location.href = "/share?id="+mileId;
+    window.location.href = "/share?milestone_id="+mileId;
 });
 
 $(".delete").click(function () {
     let mileId = this.id.substring(3);
-    window.location.href = "/delete?id="+mileId;
+    window.location.href = "/delete?milestone_id="+mileId;
 });
 
 $(".project-view").click(function () {
     let projectId = this.id.substring(3);
-    window.location.href = "/milestones?id="+projectId;
+    window.location.href = "/milestones?project_id="+projectId;
 });
 
 

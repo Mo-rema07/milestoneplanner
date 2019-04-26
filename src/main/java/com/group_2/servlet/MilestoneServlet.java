@@ -21,11 +21,21 @@ public class MilestoneServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(true);
+		int project_id;
 		try {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
-				int project_id = Integer.parseInt(req.getParameter("id"));
+				String id = req.getParameter("project_id");
 
+				if (id != null){
+					project_id = Integer.parseInt(id);
+				}
+				else{
+					id = session.getAttribute("project_id").toString();
+					project_id = Integer.parseInt(id);
+				}
+
+				session.setAttribute("project_id",project_id);
 				MilestoneList allMilestones= DAO.loadMilestones();
 				allMilestones = allMilestones.filter(project_id);
 
@@ -53,12 +63,23 @@ public class MilestoneServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(true);
+		int project_id;
 		try {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
+				String id = req.getParameter("project_id");
+
+				if (id != null){
+					project_id = Integer.parseInt(id);
+				}
+				else{
+					id = session.getAttribute("project_id").toString();
+					project_id = Integer.parseInt(id);
+				}
+
 				String name = req.getParameter("title");
 				String dueDate = req.getParameter("dueDate");
-				int project_id = Integer.parseInt(req.getParameter("id"));
+				req.setAttribute("project_id",project_id);
 
 				Milestone milestone = new Milestone(name,project_id);
 				milestone.setDueDate(DateParser.toDate(dueDate));

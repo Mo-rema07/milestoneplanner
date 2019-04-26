@@ -22,7 +22,7 @@ public class deleteMilestoneServlet extends HttpServlet {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
 				MilestoneList allMilestones= DAO.loadMilestones();
-				String name = req.getParameter("id");
+				String name = req.getParameter("milestone_id");
 				for (Milestone m : allMilestones.getList()){
 					if (m.getName().equals(name)){
 						DAO.deleteMilestone(m);
