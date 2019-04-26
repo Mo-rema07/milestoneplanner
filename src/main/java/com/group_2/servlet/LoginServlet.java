@@ -18,13 +18,16 @@ public class LoginServlet  extends HttpServlet {
 		String name = request.getParameter("user");
 		String pass = request.getParameter("password");
 		String email = request.getParameter("email");
-
+		HttpSession session;
 		if (email != null) {
 			UserLogin.register(name,pass,email);
+			session = request.getSession();
 			response.sendRedirect("/projects");
 		} else {
 			if(UserLogin.login(name,pass))
 			{
+				session= request.getSession();
+				session.setAttribute("userName", name);
 				response.sendRedirect("/projects");
 			}
 			else

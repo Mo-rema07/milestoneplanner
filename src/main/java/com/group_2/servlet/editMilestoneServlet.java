@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 
@@ -18,34 +19,46 @@ import java.sql.Date;
 public class editMilestoneServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		MilestoneList milestonesList = DAO.loadMilestones();
-		String name = req.getParameter("id");
-		Milestone milestone = new Milestone(name);
-		for (Milestone m : milestonesList.getList()){
-			if(m.getName().equals(name)){
-				milestone = m;
+		HttpSession session = req.getSession(true);
+		try {
+			String userName = session.getAttribute("userName").toString();
+			if (userName!=null){
+				MilestoneList milestonesList = DAO.loadMilestones();
+				String name = req.getParameter("id");
+				Milestone milestone = new Milestone(name);
+				for (Milestone m : milestonesList.getList()){
+					if(m.getName().equals(name)){
+						milestone = m;
+					}
+				}
+				String dueDate = DateParser.toString(milestone.getDueDate());
+				Date date = milestone.getCompletionDate();
+				String completionDate;
+
+				if (date != null){
+					completionDate = DateParser.toString(date);
+				}
+				else{
+					completionDate = null;
+				}
+
+
+				req.setAttribute("m", milestone);
+				req.setAttribute("dueDate", dueDate);
+				req.setAttribute("completionDate", completionDate);
+
+				RequestDispatcher rs = req.getRequestDispatcher("/edit.jsp");
+				rs.include(req, resp);
 			}
+			else{
+				resp.sendRedirect("/login");
+			}
+
 		}
-
-		String dueDate = DateParser.toString(milestone.getDueDate());
-		Date date = milestone.getCompletionDate();
-		String completionDate;
-
-		if (date != null){
-			completionDate = DateParser.toString(date);
+		catch (Exception e) {
+			e.printStackTrace();
+			resp.sendRedirect("/login");
 		}
-		else{
-			completionDate = null;
-		}
-
-
-		req.setAttribute("m", milestone);
-		req.setAttribute("dueDate", dueDate);
-		req.setAttribute("completionDate", completionDate);
-
-		RequestDispatcher rs = req.getRequestDispatcher("/edit.jsp");
-		rs.include(req, resp);
-
 
 	}
 
