@@ -18,13 +18,12 @@ public class completeMilestoneServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MilestoneList allMilestones= DAO.loadMilestones();
 		String name = req.getParameter("id");
-		System.out.println(name);
 		boolean state = Boolean.parseBoolean(req.getParameter("to"));
-		System.out.println(state);
 		for (Milestone m : allMilestones.getList()){
 			if (m.getName().equals(name)){
 				m.setComplete(state);
-				System.out.println(m.getName());
+				DAO.updateMilestone(m,name);
+
 			}
 		}
 		DAO.loadMilestones();

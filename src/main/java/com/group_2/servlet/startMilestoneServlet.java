@@ -23,6 +23,7 @@ public class startMilestoneServlet extends HttpServlet {
 		for (Milestone m : allMilestones.getList()){
 			if (m.getName().equals(name)){
 				m.setHasStarted(state);
+				DAO.updateMilestone(m,name);
 			}
 		}
 		MilestoneList notStarted= allMilestones.getNotStarted();
