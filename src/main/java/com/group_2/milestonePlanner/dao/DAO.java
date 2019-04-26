@@ -158,5 +158,14 @@ public class DAO {
 		}
 	}
 
+	public static void deleteMilestone(Milestone milestone){
+		String DELETE_MILESTONE_QUERY ="DELETE FROM milestone WHERE name = \""+milestone.getName()+"\";";
+
+		try (PreparedStatement ps = conn.prepareStatement(DELETE_MILESTONE_QUERY)) {
+			ps.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 }
