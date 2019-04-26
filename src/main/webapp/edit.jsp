@@ -16,29 +16,37 @@
     <header>
         <img src="img/logo.png" alt="logo">
     </header>
-    <form method="post">
-        Milestone name :<input type="text" name="name" value="${m.getName()}"><br>
-        Due Date: <input type="date" name="dueDate" value="${dueDate}"><br>
-        Completion Date: <input type="date"  name="completionDate" value="${completionDate}"><br><br>
+    <form method="post" id="editMilestone">
+        <label for="m-name" class="textLabel"><h4>Milestone name:</h4></label>
+        <input  id="m-name" type="text" name="name" value="${m.getName()}">
+          <label for="m-date" class="textLabel"><h4>Due date:</h4></label>
+           <input id="m-date" type="date" name="dueDate" value="${dueDate}">
+          <label for="c-date" class="textLabel"><h4>Completion date:</h4></label>
+           <input id="c-date" type="date"  name="completionDate" value="${completionDate}">
+             <br>
         <c:choose>
             <c:when test="${m.hasStarted()}">
-                Started: <br><input type="radio" name="started" value="true" checked> True<br>
-                <input type="radio" name="started" value="false"> False<br>
+              <label for="m-started" class="textLabel"><h4>Started:</h4></label>
+              <input type="radio" name="started" value="true" checked id="m-started"> True
+                <input type="radio" name="started" value="false" id="m-started-f"> False<br>
             </c:when>
             <c:otherwise>
-                Started: <br><input type="radio" name="started" value="true" checked> True<br>
-                <input type="radio" name="started" value="false" checked> False<br>
+                <label for="m-started" class="textLabel"><h4>Started:</h4></label>
+                <input type="radio" name="started" value="true"  id="m-started"> True
+                <input type="radio" name="started" value="false" checked id="m-started-f"> False<br>
             </c:otherwise>
         </c:choose>
 
         <c:choose>
             <c:when test="${m.isComplete()}">
-                Completed: <br><input type="radio" name="complete" value="true" checked> True<br>
-                <input type="radio" name="complete" value="false"> False<br>
+                <label for="m-completed" class="textLabel"><h4>Completed:</h4></label>
+                <input type="radio" name="complete" value="true" checked id="m-completed"> True
+                <input type="radio" name="complete" value="false" id="m-completed-f"> False<br>
             </c:when>
             <c:otherwise>
-                Completed: <br><input type="radio" name="complete" value="true"> True<br>
-                <input type="radio" name="complete" value="false" checked> False<br>
+                <label for="m-completed" class="textLabel"><h4>Completed:</h4></label>
+                <input type="radio" name="complete" value="true" id="m-completed" > True
+                <input type="radio" name="complete" value="false" checked id="m-completed-f"> False<br>
             </c:otherwise>
         </c:choose>
 
