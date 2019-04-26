@@ -20,7 +20,7 @@
     </header>
 
     <!-- Not Started -->
-    <div class="milestones-left">
+    <div class="milestones">
 
         <div class="gallery">
             <h2 class="gallery-heading">Milestones</h2>

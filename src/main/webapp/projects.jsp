@@ -15,7 +15,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Milestone Planner</title>
+    <title>Projects</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -27,7 +27,7 @@
 <div class="container">
     <!-- Header -->
     <header>
-        <div class="addProject">
+        <div class="addProject" id="addProj">
             <button id="addProjectBtn">Add Project</button>
             <div id="projectModal" class="modal">
                 <div class="modal-content">
@@ -46,15 +46,15 @@
             </div>
         </div>
         <div class="logo">
-            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" alt="logo" class="logo">
         </div>
     </header>
 
     <div class="projectsList">
-        <h1>Available Projects</h1>
+        <h1><strong>Available Projects</strong></h1>
         <ul>
             <c:forEach var="project" items="${ProjectList}">
-                <li><a  class="project-view" id ="pro<c:out value="${project.getProject_id()}"/> " > <c:out value="${project.getName()}"/>  </a></li>
+                <li class="thumbnail"><a  class="project-view" id ="pro<c:out value="${project.getProject_id()}"/> " > <c:out value="${project.getName()}"/>  </a></li>
             </c:forEach>
         </ul>
     </div>

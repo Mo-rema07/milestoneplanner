@@ -93,7 +93,6 @@ public class Milestone {
 		this.dueDate = dueDate;
 	}
 
-
 	public Date getCompletionDate() {
 		return completionDate;
 	}

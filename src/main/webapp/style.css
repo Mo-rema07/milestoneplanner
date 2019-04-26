@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Body */
 body {
-    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: rgb(247, 247, 247);
     margin: 0;
 }
@@ -13,6 +13,7 @@ body{
 
 h1, h2, h3, h4{
     color: rgb(148,0,211);
+    text-align: center;
 }
 
 /* login page */
@@ -21,13 +22,13 @@ h1, h2, h3, h4{
 .login{
     width: 10vw;
     margin-left: 20%;
-    margin-right: auto;
     padding-bottom: 2%;
     margin-top: 10%;
+    display: inline;
 }
 .login button{
     border: hidden;
-    border-radius: none;
+    border-radius: 4px;
     padding: 20px 60px;
     background-color: rgb(148,0,211);
     color: white;
@@ -50,18 +51,19 @@ h1, h2, h3, h4{
     width: 9.5vw;
     margin-left: 20%;
     margin-right: auto;
+    display: inline;
 }
 #SignUp{
     display:none;
 
 }
 .signup button{
-  margin-left: 7%;
-    background-color: rgba(0,0,0,0.1);
-    border:1px solid white;
-    cursor: pointer;
+    border: hidden;
+    border-radius: 4px;
+    padding: 20px 60px;
+    background-color: rgb(175, 62, 11);
     color: white;
-    padding: 20px 35px;
+    cursor: pointer;
 }
 
 
@@ -85,7 +87,7 @@ h1, h2, h3, h4{
 }
 .login-container{
   width: 90%;
-  margin-left: auto%;
+  margin-left: auto;
   margin-right: auto;
 }
 .login-container header{
@@ -122,22 +124,18 @@ header{
 }
 
 .milestones{
-    width: 20vw;
+    width: 33%;
     height: auto;
     float: left;
     border: hidden;
-    margin-right: 8%;
     margin-top: 1%;
 }
-
-.milestones-left{
-    width: 20vw;
+.milestones-right{
+    width: 33%;
     height: auto;
     float: left;
     border:hidden;
     margin-top: 1%;
-  margin-left:7%;
-  margin-right: 8%;
 }
 .gallery {
     clear: both;
@@ -179,6 +177,8 @@ header{
     border-bottom: 4px solid #6DC7D0;
     border: hidden;
     cursor: move;
+    border-radius: 5px;
+    border: 1px solid #6DC7D0;
 }
 .gallery .thumbnail h4 {
     margin-top: 0%;
@@ -362,6 +362,59 @@ drag1{
     border-radius: 5px;
 }
 
+#milestoneBtn,#addProjectBtn{
+    background-color: #31B0D5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #46b8da;
+}
+
+#addMile,#addProj{
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+    margin: 1%;
+}
+
+#logo, .logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* More info */
+.intro {
+    background-color: #FFFFFF;
+    padding-bottom: 35px;
+}
+.column {
+    width: 50%;
+    text-align: center;
+    padding-top: 30px;
+    float: left;
+}
+.intro .column h3 {
+    color: #FFFFFF;
+    text-align: center;
+}
 /*edit milestone*/
 #editMilestone{
   width: 50%;
