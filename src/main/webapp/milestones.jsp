@@ -48,7 +48,9 @@
             <c:forEach items="${notStarted}" var="milestone">
                 <div class="thumbnail">
                     <div class="icons">
-                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                        <i class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</i>
+                        <i class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</i>
+                        <i class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</i>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
@@ -78,7 +80,9 @@
             <c:forEach items="${inProgress}" var="milestone">
                 <div class="thumbnail">
                     <div class="icons">
-                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                        <button class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</button>
+                        <button class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</button>
+                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</button>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
@@ -88,7 +92,6 @@
                             <input id="str<c:out value="${milestone.getName()}"/>" type="checkbox" checked  class="start">
                             <span class="checkmark"></span>
                         </label>
-
 
                         <label class="checkbox-container">Completed
                             <input id="com<c:out value="${milestone.getName()}"/>" type="checkbox" class="complete" >
@@ -109,7 +112,9 @@
             <c:forEach items="${completed}" var="milestone">
                 <div class="thumbnail">
                     <div class="icons">
-                        <i class="material-icons md-18">create</i><i class="material-icons md-18">share</i><i class="material-icons md-18">delete_outline</i>
+                        <button class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</button>
+                        <button class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</button>
+                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</button>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
