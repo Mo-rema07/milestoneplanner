@@ -54,4 +54,8 @@ public class Project {
 	public void setProgress(double progress) {
 		this.progress = progress;
 	}
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
+	}
 }

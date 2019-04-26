@@ -23,13 +23,14 @@ public class ProjectServlet extends HttpServlet {
 		HttpSession session = req.getSession(true);
 		try {
 			String userName = session.getAttribute("userName").toString();
+			int userId = (int) session.getAttribute("userId");
 			if (userName!=null){
 				String name = req.getParameter("ptitle");
-				Project project = new Project(name);
+				Project project = new Project(name,userId);
 				DAO.addProject(project);
-
+				System.out.println(userId);
 				ProjectList projectList = DAO.loadProjects();
-				req.setAttribute("ProjectList",projectList.getList());
+				req.setAttribute("ProjectList",projectList.getList(userId));
 
 				RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 				rs.include(req, resp);
@@ -52,10 +53,11 @@ public class ProjectServlet extends HttpServlet {
 		HttpSession session = req.getSession(true);
 		try {
 			String userName = session.getAttribute("userName").toString();
+			int userId = (int) session.getAttribute("userId");
 			if (userName!=null){
 				ProjectList projectList = DAO.loadProjects();
 
-				req.setAttribute("ProjectList",projectList.getList());
+				req.setAttribute("ProjectList",projectList.getList(userId));
 
 				RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 				rs.include(req, resp);

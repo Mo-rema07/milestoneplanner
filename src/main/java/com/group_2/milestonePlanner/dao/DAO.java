@@ -84,7 +84,7 @@ public class DAO {
 	}
 
 	public static void addUser (User user){
-		String ADD_USER_QUERY = "INSERT INTO user (name, password, email) VALUES ( \'"+
+		String ADD_USER_QUERY = "INSERT INTO user (pk_user_id,name, password, email) VALUES ( \'"+
 				user.getUser_id()+"\',\'"+user.getUserName()+"\',\'"+
 				user.getPasswordHash()+ "\',\'"+ user.getEmail()+"\')";
 

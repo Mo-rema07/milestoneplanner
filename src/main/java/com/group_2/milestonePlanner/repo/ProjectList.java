@@ -18,4 +18,14 @@ public class ProjectList {
 	public ArrayList<Project> getList(){
 		return list;
 	}
+
+	public  ArrayList<Project> getList(int owner_id){
+		ArrayList<Project> newList = new ArrayList<>();
+		for (Project project: list){
+			if (project.getOwnerId()==owner_id){
+				newList.add(project);
+			}
+		}
+		return newList;
+	}
 }

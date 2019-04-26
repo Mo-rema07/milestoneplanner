@@ -87,11 +87,9 @@ public class Milestone {
 	}
 
 
-
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
-
 
 
 	public Date getCompletionDate() {
@@ -104,8 +102,6 @@ public class Milestone {
 }
 
 //TODO: Signup message
-//TODO:	share
 //TODO: find a way to share a project
 //TODO:	link projects to users and milestones to projects
-//TODO:	Session Management
 //TODO: Progress Bar

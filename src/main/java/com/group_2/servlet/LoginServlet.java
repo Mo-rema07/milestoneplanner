@@ -1,6 +1,8 @@
 package com.group_2.servlet;
 
 import com.group_2.milestonePlanner.auth.UserLogin;
+import com.group_2.milestonePlanner.dao.DAO;
+import com.group_2.milestonePlanner.repo.UserList;
 
 import java.io.*;
 import javax.servlet.*;
@@ -21,13 +23,23 @@ public class LoginServlet  extends HttpServlet {
 		HttpSession session;
 		if (email != null) {
 			UserLogin.register(name,pass,email);
+
+			UserList users = DAO.loadUsers();
+			int user_id = users.getUser(name).getUser_id();
+
 			session = request.getSession();
+			session.setAttribute("userName", name);
+			session.setAttribute("userId", user_id);
 			response.sendRedirect("/projects");
 		} else {
 			if(UserLogin.login(name,pass))
 			{
+				UserList users = DAO.loadUsers();
+				int user_id = users.getUser(name).getUser_id();
+
 				session= request.getSession();
 				session.setAttribute("userName", name);
+				session.setAttribute("userId", user_id);
 				response.sendRedirect("/projects");
 			}
 			else

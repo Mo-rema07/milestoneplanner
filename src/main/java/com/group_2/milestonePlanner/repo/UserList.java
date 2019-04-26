@@ -38,4 +38,14 @@ public class UserList {
 		return null;
 	}
 
+	public  User getUser(String name){
+		for (User user : list){
+			if (user.getUserName().equals(name)){
+				return user;
+			}
+		}
+		return null;
+
+	}
+
 }
