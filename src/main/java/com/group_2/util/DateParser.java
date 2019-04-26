@@ -21,5 +21,10 @@ public class DateParser {
 		return null;
 	}
 
+	public static String toString(Date date){
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return formatter.format(date);
+	}
+
 
 }

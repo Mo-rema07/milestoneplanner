@@ -1,4 +1,4 @@
-taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,14 +16,33 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <header>
         <img src="img/logo.png" alt="logo">
     </header>
-    <form>
-        Milestone name :<input type="text">
-        Due Date: <input type="date">
-        Completion Date: <input type="date">
-        Started: <input type="radio" name="started" value="true"> True<br>
-                 <input type="radio" name="started" value="false"> False<br>
-        Completed: <input type="radio" name="complete" value="true"> True<br>
-                    <input type="radio" name="complete" value="false"> False<br>
+    <form method="post">
+        Milestone name :<input type="text" name="name" value="${m.getName()}"><br>
+        Due Date: <input type="date" name="dueDate" value="${dueDate}"><br>
+        Completion Date: <input type="date"  name="completionDate" value="${completionDate}"><br><br>
+        <c:choose>
+            <c:when test="${m.hasStarted()}">
+                Started: <br><input type="radio" name="started" value="true" checked> True<br>
+                <input type="radio" name="started" value="false"> False<br>
+            </c:when>
+            <c:otherwise>
+                Started: <br><input type="radio" name="started" value="true" checked> True<br>
+                <input type="radio" name="started" value="false" checked> False<br>
+            </c:otherwise>
+        </c:choose>
+
+        <c:choose>
+            <c:when test="${m.isComplete()}">
+                Completed: <br><input type="radio" name="complete" value="true" checked> True<br>
+                <input type="radio" name="complete" value="false"> False<br>
+            </c:when>
+            <c:otherwise>
+                Completed: <br><input type="radio" name="complete" value="true"> True<br>
+                <input type="radio" name="complete" value="false" checked> False<br>
+            </c:otherwise>
+        </c:choose>
+
+
         <input type="submit" name="submit" id="submit" value="Submit"/>
     </form>
 

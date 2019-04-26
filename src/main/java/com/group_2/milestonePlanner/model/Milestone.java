@@ -40,6 +40,12 @@ public class Milestone {
 		this.project_id = project_id;
 	}
 
+	public Milestone(boolean isComplete, boolean hasStarted, String name) {
+		this.isComplete=isComplete;
+		this.hasStarted=hasStarted;
+		this.name = name;
+	}
+
 	public boolean hasStarted() {
 		return hasStarted;
 	}

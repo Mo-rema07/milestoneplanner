@@ -168,4 +168,18 @@ public class DAO {
 		}
 	}
 
+	public static void updateMilestone(Milestone milestone, String name){
+		int isComplete = milestone.isComplete() ? 1 : 0;
+		int hasStarted = milestone.hasStarted() ? 1 : 0;
+
+		String UPDATE_MILESTONE_QUERY = "UPDATE milestone SET isComplete = "+isComplete+",hasStarted ="
+				+hasStarted+",dueDate =\' "+milestone.getDueDate()+"\', completionDate =\' "+milestone.getCompletionDate()
+				+"\',name =\'"+milestone.getName()+"\' WHERE name = \'"+name+"\'";
+
+		try (PreparedStatement ps = conn.prepareStatement(UPDATE_MILESTONE_QUERY)) {
+			ps.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
