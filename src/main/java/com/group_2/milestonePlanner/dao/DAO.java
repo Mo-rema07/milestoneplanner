@@ -182,4 +182,19 @@ public class DAO {
 			throw new RuntimeException(e);
 		}
 	}
+
+	public static int lastUserId(){
+		int max=35;
+		String MAX_USER_ID = "SELECT MAX(pk_user_id) FROM user";
+		try (PreparedStatement ps = conn.prepareStatement(MAX_USER_ID)) {
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				max = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return max;
+
+	}
 }

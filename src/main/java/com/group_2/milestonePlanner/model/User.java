@@ -1,12 +1,14 @@
 package com.group_2.milestonePlanner.model;
 
+import com.group_2.milestonePlanner.dao.DAO;
+
 public class User {
 	private String userName;
 	private String passwordHash;
 	private String email;
 	private int user_id;
 
-	private static int next_user_id = 1;
+	private static int next_user_id = DAO.lastUserId()+1;
 
 	public User(String userName, String passwordHash) {
 		this.userName = userName;
