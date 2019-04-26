@@ -24,7 +24,10 @@ public class MilestoneServlet extends HttpServlet {
 		try {
 			String userName = session.getAttribute("userName").toString();
 			if (userName!=null){
+				int project_id = Integer.parseInt(req.getParameter("id"));
+
 				MilestoneList allMilestones= DAO.loadMilestones();
+				allMilestones = allMilestones.filter(project_id);
 
 				MilestoneList notStarted= allMilestones.getNotStarted();
 				MilestoneList inProgress= allMilestones.getInProgress();
@@ -55,11 +58,14 @@ public class MilestoneServlet extends HttpServlet {
 			if (userName!=null){
 				String name = req.getParameter("title");
 				String dueDate = req.getParameter("dueDate");
-				Milestone milestone = new Milestone(name);
+				int project_id = Integer.parseInt(req.getParameter("id"));
+
+				Milestone milestone = new Milestone(name,project_id);
 				milestone.setDueDate(DateParser.toDate(dueDate));
 
 				DAO.addMilestone(milestone);
 				MilestoneList allMilestones= DAO.loadMilestones();
+				allMilestones = allMilestones.filter(project_id);
 
 				MilestoneList notStarted= allMilestones.getNotStarted();
 				MilestoneList inProgress= allMilestones.getInProgress();

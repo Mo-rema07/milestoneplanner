@@ -26,6 +26,11 @@ public class Milestone {
 		this.dueDate = dueDate;
 	}
 
+	public Milestone(String name, int project_id) {
+		this.name = name;
+		this.project_id = project_id;
+	}
+
 	public Milestone(String name) {
 		this.name = name;
 	}
@@ -86,7 +91,6 @@ public class Milestone {
 		this.project_id = project_id;
 	}
 
-
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
@@ -103,5 +107,6 @@ public class Milestone {
 
 //TODO: Signup message
 //TODO: find a way to share a project
-//TODO:	link projects to users and milestones to projects
+//TODO:	link milestones to projects
 //TODO: Progress Bar
+//TODO: Add salt

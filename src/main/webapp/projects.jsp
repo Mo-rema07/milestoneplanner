@@ -18,6 +18,8 @@
     <title>Milestone Planner</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -52,7 +54,7 @@
         <h1>Available Projects</h1>
         <ul>
             <c:forEach var="project" items="${ProjectList}">
-                <li><a href="/milestones"> <c:out value="${project.getName()}"/>  </a></li>
+                <li><a  class="project-view" id ="pro<c:out value="${project.getProject_id()}"/> " > <c:out value="${project.getName()}"/>  </a></li>
             </c:forEach>
         </ul>
     </div>
@@ -61,5 +63,6 @@
 </div>
 
 <script src="JS/projectsModal.js"></script>
+<script src="JS/actions.js"></script>
 </body>
 </html>

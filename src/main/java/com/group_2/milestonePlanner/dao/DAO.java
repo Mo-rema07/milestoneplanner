@@ -101,7 +101,7 @@ public class DAO {
 		try(PreparedStatement ps = conn.prepareStatement(LIST_PROJECTS_QUERY)) {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
-				list.put( new Project(rs.getString("name"),rs.getInt("fk_user_id")));
+				list.put( new Project(rs.getInt("pk_project_id"),rs.getString("name"),rs.getInt("fk_user_id")));
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -110,8 +110,8 @@ public class DAO {
 	}
 
 	public static void addProject (Project project){
-		String ADD_PROJECT_QUERY = "INSERT INTO project (name, fk_user_id) VALUES ( \'"+
-				project.getName()+"\',\'"+project.getOwnerId()+"\')";
+		String ADD_PROJECT_QUERY = "INSERT INTO project (pk_project_id,name, fk_user_id) VALUES ( \'"+
+				project.getProject_id()+"\',\'"+project.getName()+"\',\'"+project.getOwnerId()+"\')";
 		try (PreparedStatement ps = conn.prepareStatement(ADD_PROJECT_QUERY)) {
 			ps.execute();
 		} catch (SQLException e) {
@@ -187,6 +187,21 @@ public class DAO {
 		int max=35;
 		String MAX_USER_ID = "SELECT MAX(pk_user_id) FROM user";
 		try (PreparedStatement ps = conn.prepareStatement(MAX_USER_ID)) {
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				max = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return max;
+
+	}
+
+	public static int lastProjectId(){
+		int max=35;
+		String MAX_PROJECT_ID = "SELECT MAX(pk_project_id) FROM project";
+		try (PreparedStatement ps = conn.prepareStatement(MAX_PROJECT_ID)) {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				max = rs.getInt(1);

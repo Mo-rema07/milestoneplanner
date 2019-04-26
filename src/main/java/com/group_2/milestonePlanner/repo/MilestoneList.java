@@ -51,4 +51,14 @@ public class MilestoneList {
 		return notStarted;
 	}
 
+	public MilestoneList filter(int project_id){
+		MilestoneList filtered = new MilestoneList();
+		for (Milestone m: list){
+			if (m.getProject_id()==project_id){
+				filtered.put(m);
+			}
+		}
+		return filtered;
+	}
+
 }

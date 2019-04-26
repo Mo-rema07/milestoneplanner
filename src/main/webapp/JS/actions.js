@@ -37,4 +37,9 @@ $(".delete").click(function () {
     window.location.href = "/delete?id="+mileId;
 });
 
+$(".project-view").click(function () {
+    let projectId = this.id.substring(3);
+    window.location.href = "/milestones?id="+projectId;
+});
+
 
