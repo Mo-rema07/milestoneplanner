@@ -18,7 +18,7 @@
         <img src="img/logo.png" alt="logo">
     </header>
 
-    <!-- Not Started -->>
+    <!-- Not Started -->
     <div class="milestones-left">
 
         <div class="gallery">
