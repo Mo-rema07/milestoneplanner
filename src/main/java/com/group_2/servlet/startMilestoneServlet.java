@@ -31,16 +31,7 @@ public class startMilestoneServlet extends HttpServlet {
 						DAO.updateMilestone(m,name);
 					}
 				}
-				MilestoneList notStarted= allMilestones.getNotStarted();
-				MilestoneList inProgress= allMilestones.getInProgress();
-				MilestoneList completed= allMilestones.getCompleted();
-
-				req.setAttribute("notStarted",notStarted.getList());
-				req.setAttribute("inProgress",inProgress.getList());
-				req.setAttribute("completed",completed.getList());
-
-				RequestDispatcher rs = req.getRequestDispatcher("/milestones.jsp");
-				rs.include(req, resp);
+				resp.sendRedirect("/milestones");
 			}
 
 			else{
