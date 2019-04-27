@@ -136,3 +136,10 @@
 </body>
 </html>
 
+<%--TODO: Add sharing capacity--%>
+<%--TODO: Refactor DAO sql to use prepared statements correctly--%>
+<%--TODO: Refactor session management code to use Session Filters--%>
+<%--TODO: Refactor milestone_code to use milestone_id as a reference--%>
+<%--TODO: Add validation for all forms--%>
+<%--TODO: Add Navigation to take user back to Projects page--%>
+<%--TODO: Add Logout functionality--%>
