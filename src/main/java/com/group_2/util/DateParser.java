@@ -26,5 +26,9 @@ public class DateParser {
 		return formatter.format(date);
 	}
 
+	public static Date utilToSql(java.util.Date date){
+		return new Date(date.getTime());
+	}
+
 
 }

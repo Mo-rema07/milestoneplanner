@@ -3,6 +3,7 @@ package com.group_2.servlet;
 import com.group_2.milestonePlanner.dao.DAO;
 import com.group_2.milestonePlanner.model.Milestone;
 import com.group_2.milestonePlanner.repo.MilestoneList;
+import com.group_2.util.DateParser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,6 +30,9 @@ public class completeMilestoneServlet extends HttpServlet {
 				for (Milestone m : allMilestones.getList()){
 					if (m.getName().equals(name)){
 						m.setComplete(state);
+						java.util.Date now = new java.util.Date();
+						java.sql.Date sqlNow = DateParser.utilToSql(now);
+						m.setCompletionDate(sqlNow);
 						DAO.updateMilestone(m,name);
 
 					}

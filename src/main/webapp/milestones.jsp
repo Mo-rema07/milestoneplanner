@@ -62,12 +62,6 @@
                             <span class="checkmark"></span>
                         </label>
 
-
-                        <label class="checkbox-container">Completed
-                            <input id="com<c:out value="${milestone.getName()}"/>" type="checkbox" class="complete">
-                            <span class="checkmark"></span>
-                        </label>
-
                     </form>
                 </div>
             </c:forEach>
@@ -119,12 +113,9 @@
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
+                    <p class="tag"><i class="material-icons md-18">check</i> Completed:  <c:out value="${milestone.getCompletionDate()}"/></p>
                     <form action="" method="post" class="milestoneStatus">
 
-                        <label class="checkbox-container">Started
-                            <input id="str<c:out value="${milestone.getName()}"/>" type="checkbox" checked class="start">
-                            <span class="checkmark"></span>
-                        </label>
                         <label class="checkbox-container">Completed
                             <input id="com<c:out value="${milestone.getName()}"/>" type="checkbox" checked class="complete">
                             <span class="checkmark"></span>
