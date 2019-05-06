@@ -18,6 +18,7 @@
     <title>Projects</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
@@ -52,7 +53,7 @@
 
     <div class="projectsList">
         <h1><strong>Available Projects</strong></h1>
-        <ul>
+        <ul >
             <c:forEach var="project" items="${ProjectList}">
                 <li class="thumbnail"><a  class="project-view" id ="pro<c:out value="${project.getProject_id()}"/> " > <c:out value="${project.getName()}"/>  </a></li>
             </c:forEach>

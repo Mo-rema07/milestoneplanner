@@ -4,7 +4,6 @@ import com.group_2.milestonePlanner.dao.DAO;
 import com.group_2.milestonePlanner.model.Milestone;
 import com.group_2.milestonePlanner.repo.MilestoneList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +35,6 @@ public class deleteMilestoneServlet extends HttpServlet {
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}
 	}

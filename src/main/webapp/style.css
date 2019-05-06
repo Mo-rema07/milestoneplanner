@@ -164,6 +164,8 @@ header{
   color: rgb(148,0,211);
 }
 .thumbnail {
+    cursor: pointer;
+    list-style: none;
     width: 95%;
     height: 10%;
     text-align: center;
@@ -176,7 +178,6 @@ header{
     padding-top: 20px;
     border-bottom: 4px solid #6DC7D0;
     border: hidden;
-    cursor: move;
     border-radius: 5px;
     border: 1px solid #6DC7D0;
 }

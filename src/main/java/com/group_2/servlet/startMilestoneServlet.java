@@ -39,7 +39,6 @@ public class startMilestoneServlet extends HttpServlet {
 			}
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}
 	}

@@ -17,7 +17,6 @@ import java.io.IOException;
 @WebServlet(name ="milestone", urlPatterns = "/milestones")
 public class MilestoneServlet extends HttpServlet {
 
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(true);
@@ -50,12 +49,9 @@ public class MilestoneServlet extends HttpServlet {
 				RequestDispatcher rs = req.getRequestDispatcher("/milestones.jsp");
 				rs.include(req, resp);
 			}
-			else{
-				resp.sendRedirect("/login");
-			}
 		}
-		catch (Exception e) {
-			e.printStackTrace();
+		catch (NullPointerException e) {
+//			session.setAttribute("next","/milestones");
 			resp.sendRedirect("/login");
 		}
 	}
@@ -105,7 +101,7 @@ public class MilestoneServlet extends HttpServlet {
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+//			session.setAttribute("next","/milestones");
 			resp.sendRedirect("/login");
 		}
 	}

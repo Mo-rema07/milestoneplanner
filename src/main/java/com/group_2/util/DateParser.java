@@ -16,9 +16,8 @@ public class DateParser {
 			realDate = new Date(utilDate.getTime());
 			return realDate;
 		} catch (ParseException e) {
-			e.printStackTrace();
+					return null;
 		}
-		return null;
 	}
 
 	public static String toString(Date date){

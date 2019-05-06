@@ -1,5 +1,5 @@
 
-package com.group_2.servlet;
+package com.group_2;
 
 
 import com.group_2.milestonePlanner.dao.DAO;
@@ -47,5 +47,4 @@ public class Runner {
         }
         tomcat.getServer().await();
     }
-
 }

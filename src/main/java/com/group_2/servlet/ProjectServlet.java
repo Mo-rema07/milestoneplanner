@@ -19,8 +19,9 @@ public class ProjectServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+			throws IOException {
 		HttpSession session = req.getSession(true);
+
 		try {
 			String userName = session.getAttribute("userName").toString();
 			int userId = (int) session.getAttribute("userId");
@@ -32,6 +33,7 @@ public class ProjectServlet extends HttpServlet {
 				ProjectList projectList = DAO.loadProjects();
 				req.setAttribute("ProjectList",projectList.getList(userId));
 
+
 				RequestDispatcher rs = req.getRequestDispatcher("/projects.jsp");
 				rs.include(req, resp);
 			}
@@ -41,7 +43,6 @@ public class ProjectServlet extends HttpServlet {
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}
 
@@ -68,7 +69,7 @@ public class ProjectServlet extends HttpServlet {
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+//			session.setAttribute("next","/milestones");
 			resp.sendRedirect("/login");
 		}
 	}

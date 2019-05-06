@@ -51,7 +51,7 @@
                     <div class="icons">
                         <i class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</i>
                         <i class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</i>
-                        <i class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</i>
+                        <i class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete</i>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
@@ -77,7 +77,7 @@
                     <div class="icons">
                         <button class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</button>
                         <button class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</button>
-                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</button>
+                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete</button>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>
@@ -109,7 +109,7 @@
                     <div class="icons">
                         <button class="material-icons mdc-icon-button edit md-18"  id="edi<c:out value="${milestone.getName()}"/>">create</button>
                         <button class="material-icons mdc-icon-button share md-18"  id="sha<c:out value="${milestone.getName()}"/>">share</button>
-                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete_outline</button>
+                        <button class="material-icons mdc-icon-button delete md-18" id="del<c:out value="${milestone.getName()}"/>">delete</button>
                     </div>
                     <h4><c:out value="${milestone.getName()}"/></h4>
                     <p class="tag"><i class="material-icons md-18">watch_later</i> Due:  <c:out value="${milestone.getDueDate()}"/></p>

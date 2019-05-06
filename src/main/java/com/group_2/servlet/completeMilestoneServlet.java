@@ -5,7 +5,6 @@ import com.group_2.milestonePlanner.model.Milestone;
 import com.group_2.milestonePlanner.repo.MilestoneList;
 import com.group_2.util.DateParser;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +20,6 @@ public class completeMilestoneServlet extends HttpServlet {
 		HttpSession session = req.getSession(true);
 		try {
 			String userName = session.getAttribute("userName").toString();
-//			int project_id = Integer.parseInt(req.getParameter("project_id"));
-//			req.setAttribute("project_id",project_id);
 			if (userName!=null){
 				MilestoneList allMilestones= DAO.loadMilestones();
 				String name = req.getParameter("milestone_id");
@@ -45,7 +42,6 @@ public class completeMilestoneServlet extends HttpServlet {
 			}
 		}
 		catch (Exception e ) {
-			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}
 	}

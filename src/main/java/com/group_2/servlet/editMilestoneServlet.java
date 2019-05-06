@@ -41,8 +41,6 @@ public class editMilestoneServlet extends HttpServlet {
 				else{
 					completionDate = null;
 				}
-
-
 				req.setAttribute("m", milestone);
 				req.setAttribute("dueDate", dueDate);
 				req.setAttribute("completionDate", completionDate);
@@ -56,7 +54,6 @@ public class editMilestoneServlet extends HttpServlet {
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			resp.sendRedirect("/login");
 		}
 
@@ -72,12 +69,12 @@ public class editMilestoneServlet extends HttpServlet {
 		boolean isComplete = Boolean.parseBoolean(req.getParameter("complete"));
 		boolean hasStarted = Boolean.parseBoolean(req.getParameter("started"));
 
+
 		Milestone milestone = new Milestone(isComplete,hasStarted,name);
 		milestone.setDueDate(DateParser.toDate(dueDate));
 		milestone.setCompletionDate(DateParser.toDate(completionDate));
 
 		DAO.updateMilestone(milestone, initialName);
 		resp.sendRedirect("/milestones");
-
 	}
 }
