@@ -29,7 +29,7 @@
 
         Password <br>
         <label for="password" class="textLabel"></label>
-        <input type="text" name="password" id="pass" required/>
+        <input type="password" name="password" id="pass" required/>
         <br>
         <input type="submit" name="submit" id="Submit" value="Submit"/>
         <br>
@@ -51,7 +51,7 @@
 
         Password <br>
         <label for="password" class="textLabel"></label>
-        <input type="text" name="password" id="password" required/>
+        <input type="password" name="password" id="password" required/>
         <br>
         <input type="submit" name="submit" id="submit" value="Submit"/>
         <br>
