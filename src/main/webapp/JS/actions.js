@@ -29,7 +29,10 @@ $(".edit").click(function () {
 });
 $(".share").click(function () {
     let mileId = this.id.substring(3);
-    window.location.href = "/share?milestone_id="+mileId;
+    $("#milestoneName").text(mileId);
+    $("#milestoneLink").attr("href","/share?milestone_id="+mileId);
+    $("#sharingModal").show();
+    // window.location.href = "/share?milestone_id="+mileId;
 });
 
 $(".delete").click(function () {

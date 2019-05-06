@@ -1,4 +1,4 @@
-<!doctype html>
+<%--<html>--%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@
         <input type="text" name="user" id=User" required/>
         <br>
 
-        Email adress:<br>
+        Email address:<br>
         <label for="email" class="textLabel"></label>
         <input type="text" name="email" id="email" required/>
         <br>

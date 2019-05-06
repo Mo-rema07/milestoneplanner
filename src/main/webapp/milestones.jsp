@@ -126,6 +126,14 @@
             </c:forEach>
         </div>
     </div>
+    <div id="sharingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="milestoneName"></p>
+            <a href="" id="milestoneLink"> </a>
+        </div>
+
+    </div>
 
     <script src="JS/script.js"></script>
     <script src="JS/dragNDrop.js"></script>
